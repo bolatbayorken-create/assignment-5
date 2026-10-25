@@ -1,0 +1,126 @@
+/* Assignment 5 DOM & Events — added features only */
+
+/* Home: welcome and theme switcher */
+.dom-home-tools {
+    max-width: 750px;
+    margin: 0 auto 35px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    text-align: left;
+}
+.dom-home-tool {
+    padding: 18px;
+    background: #fff;
+    border: 1px solid #dcd2b4;
+    border-radius: 8px;
+}
+.dom-home-tool h2 { margin: 0 0 12px; font-size: 18px; }
+.dom-home-tool label, .tips-live-search label { display: block; font-weight: bold; margin-bottom: 8px; }
+.dom-home-tool p { font-size: 14px; margin: 12px 0 0; }
+.dom-home-inputs { display: flex; flex-wrap: wrap; gap: 8px; }
+.dom-home-tool input, .tips-live-search input {
+    min-width: 0;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #b4af96;
+    border-radius: 5px;
+}
+.dom-home-tool button, .tips-live-search button {
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 5px;
+    background: #5b7043;
+    color: white;
+    cursor: pointer;
+}
+.dom-home-tool button:hover { background: #435b31; }
+
+/* Home page dark theme (Task 1) */
+body.home-page.theme-dark { background: #1c2923; color: #f2eee3; }
+.home-page.theme-dark header { background: #22372b; border-bottom-color: #627867; }
+.home-page.theme-dark nav a, .home-page.theme-dark .logo { color: #f2eee3; }
+.home-page.theme-dark .home-title,
+.home-page.theme-dark .home-section-title,
+.home-page.theme-dark .home-label,
+.home-page.theme-dark .home-subtitle { color: #f2eee3; }
+.home-page.theme-dark .dom-home-tool,
+.home-page.theme-dark .home-benefit-card { background: #304439; border-color: #657b69; }
+.home-page.theme-dark .home-card-title { color: #d9eaba; }
+.home-page.theme-dark .home-card-text { color: #e6ebe0; }
+.home-page.theme-dark .dom-home-tool input,
+.home-page.theme-dark .home-input { background: #f9f9f3; color: #213329; }
+.home-page.theme-dark footer { background: #14241a; }
+
+/* Pantry: add/remove list (Task 4) */
+.pantry-add-product { flex-direction: column; align-items: flex-start; gap: 8px; }
+.pantry-add-product label { font-weight: bold; }
+.pantry-add-product form { display: flex; flex-wrap: wrap; gap: 8px; }
+#pantry-add-feedback { margin: 0; font-size: 13px; color: #f4dba9; }
+.pantry-added { padding-top: 30px; }
+.pantry-added h2 { margin: 0 0 8px; }
+#pantry-product-list { list-style: none; padding: 0; margin: 15px 0 30px; }
+#pantry-product-list li {
+    padding: 10px 14px;
+    margin: 8px 0;
+    background: #fbf8f1;
+    border: 1px solid #bcb4a4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    overflow-wrap: anywhere;
+}
+#pantry-product-list button {
+    border: 0;
+    border-radius: 4px;
+    padding: 7px 12px;
+    color: white;
+    background: #8c3930;
+    cursor: pointer;
+}
+#pantry-product-list button:hover { background: #6c261f; }
+
+/* Pantry: independent accordion questions (Task 2) */
+.faq-question {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    padding: 5px 0;
+    text-align: left;
+    color: #1d2d26;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.faq-question::after { content: ' +'; float: right; }
+.faq-question[aria-expanded="true"]::after { content: ' −'; }
+.faq-answer { padding: 6px 0 2px; line-height: 1.5; }
+
+/* Tips: live search (Task 3) */
+.tips-live-search {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #cdd8cb;
+    border-radius: 8px;
+}
+.tips-live-search input { width: 100%; max-width: 520px; display: block; }
+.tips-live-search p { margin: 12px 0 0; }
+#tips-no-results { font-weight: bold; color: #87392b; }
+
+.dom-home-tool button:focus-visible,
+.dom-home-tool input:focus-visible,
+.faq-question:focus-visible,
+#pantry-product-list button:focus-visible,
+.tips-live-search input:focus-visible,
+.pantry-add-product input:focus-visible,
+.pantry-add-product button:focus-visible {
+    outline: 3px solid #e9ac4f;
+    outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+    .dom-home-tools { grid-template-columns: 1fr; }
+    .pantry-add-product form { width: 100%; }
+    .pantry-add-product input { width: 100%; }
+}

@@ -6,8 +6,9 @@
     <title>CookFromHome</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/dom.css">
 </head>
-<body>
+<body class="home-page">
     <!-- это короч header его не надо трогать, если хотите новое добавить туда то делайте токо классы разделите мб с суфиксом названий своей страницы -->
      <header>
         <div class="container header-content">
@@ -29,15 +30,33 @@
          <!-- hero-секция с заголовком и призывом к действию -->
          <section class="home-hero">
              <div class="container home-hero-content">
-                 <h1 class="home-title">Готовьте дома вкусно и легко</h1>
-                 <p class="home-subtitle">Введите ингредиенты, которые есть у вас под рукой, и найдите идеальный рецепт за пару секунд.</p>
+                 <h1 class="home-title">Cook at home</h1>
+                 
 
                  <!-- форма быстрого ввода ингредиентов (требование для форм + Flexbox/Grid) -->
+                 <!-- Assignment DOM: Tasks 0 and 1 -->
+                 <section class="dom-home-tools" aria-label="JavaScript interaction practice">
+                     <div class="dom-home-tool">
+                         <h2>Personal welcome</h2>
+                         <label for="welcome-name">Your name</label>
+                         <div class="dom-home-inputs">
+                             <input id="welcome-name" type="text" placeholder="Enter your name">
+                             <button id="welcome-button" type="button">Say hello</button>
+                         </div>
+                         <p id="welcome-message" role="status" aria-live="polite">Enter your name and press the button.</p>
+                     </div>
+                     <div class="dom-home-tool">
+                         <h2>Theme switcher</h2>
+                         <button id="theme-button" type="button" aria-pressed="false">Switch to dark theme</button>
+                         <p>Click again to return to the light theme.</p>
+                     </div>
+                 </section>
+
                  <form class="home-form">
-                     <label for="ingredients-input" class="home-label">Что у вас в холодильнике?</label>
+                     <label for="ingredients-input" class="home-label">What you got?</label>
                      <div class="home-input-group">
-                         <input type="text" id="ingredients-input" class="home-input" placeholder="Например: курица, рис, помидоры..." required>
-                         <button type="submit" class="home-btn">Найти рецепты</button>
+                         <input type="text" id="ingredients-input" class="home-input" placeholder="chicken, eggs, tomatoes..." required>
+                         <button type="submit" class="home-btn">Find recepies</button>
                      </div>
                  </form>
              </div>
@@ -46,19 +65,19 @@
          <!-- секция преимуществ -->
          <section class="home-benefits">
              <div class="container">
-                 <h2 class="home-section-title">Почему выбирают CookFromHome</h2>
+                 <h2 class="home-section-title">why CookFromHome</h2>
                  <div class="home-benefits-grid">
                      <article class="home-benefit-card">
-                         <h3 class="home-card-title">Экономия продуктов</h3>
-                         <p class="home-card-text">Готовьте из того, что уже есть дома, и реже выбрасывайте еду.</p>
+                         <h3 class="home-card-title">Ecenomy</h3>
+                         <p class="home-card-text">Cook using what you already have at home, and throw away less food.</p>
                      </article>
                      <article class="home-benefit-card">
-                         <h3 class="home-card-title">Быстрый подбор</h3>
-                         <p class="home-card-text">Умный поиск подберет рецепты под ваше время и список ингредиентов.</p>
+                         <h3 class="home-card-title">Fast</h3>
+                         <p class="home-card-text">Smart search will find recipes based on the time you have and your list of ingredients.</p>
                      </article>
                      <article class="home-benefit-card">
-                         <h3 class="home-card-title">План питания</h3>
-                         <p class="home-card-text">Составляйте меню на неделю вперед и формируйте списки покупок.</p>
+                         <h3 class="home-card-title">Plan</h3>
+                         <p class="home-card-text">Plan your menu a week in advance and create shopping lists.</p>
                      </article>
                  </div>
              </div>
@@ -72,5 +91,6 @@
             <p>Cook by yourself :3</p>
         </div>
       </footer>
+    <script src="js/home-dom.js" defer></script>
 </body>
 </html>

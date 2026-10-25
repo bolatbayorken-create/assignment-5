@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pantry.css">
     <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/dom.css">
 </head>
 
 <body>
@@ -32,12 +33,21 @@
             <div class="container pantry-top-content">
                 <h1>Your Pantry</h1>
                 <div class="pantry-add-product">
-                    <p id="demo-note" class="demo-note">Demo only. Your information is not sent or stored.</p>
-                    <form action="demo-result.html" method="get" aria-describedby="demo-note" class="add-product">
-                    <input type="text" placeholder="rice, milk, tomato...">
-                    <button>ADD</button>
+                    <label for="pantry-new-product">Add a product</label>
+                    <form id="pantry-add-form" class="add-product">
+                        <input id="pantry-new-product" name="product" type="text" placeholder="rice, milk, tomato...">
+                        <button type="submit">ADD</button>
+                    </form>
+                    <p id="pantry-add-feedback" role="status" aria-live="polite">Demo list — products are not stored after a refresh.</p>
                 </div>
             </div>
+        </section>
+
+        <section class="container pantry-added" aria-labelledby="pantry-added-title">
+            <h2 id="pantry-added-title">My products</h2>
+            <p>Added products: <span id="pantry-item-count">0</span></p>
+            <p id="pantry-empty-list">No products added yet.</p>
+            <ul id="pantry-product-list" aria-label="Added products"></ul>
         </section>
 
         <section class="container pantry-main">
@@ -160,26 +170,31 @@
 
         </section>
 
-        <section class="container pantry-faq">
-            <h2>FAQ</h2>
-            <details class="faq-item">
-                    <summary>How do I update product expiration dates?</summary>
+        <section class="container pantry-faq" aria-labelledby="pantry-faq-title">
+            <h2 id="pantry-faq-title">FAQ</h2>
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">How do I update product expiration dates?</button>
+                <div class="faq-answer" id="faq-answer-1" hidden>
                     <p>Expiration dates updates automatically</p>
-            </details>
-            <details class="faq-item">
-                    <summary>Can I generate recipes directly from my pantry?</summary>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">Can I generate recipes directly from my pantry?</button>
+                <div class="faq-answer" id="faq-answer-2" hidden>
                     <p>click "Now cook >"</p>
-            </details>
-            <details class="faq-item">
-                    <summary>Cow?</summary>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">Cow?</button>
+                <div class="faq-answer" id="faq-answer-3" hidden>
                     <img src="https://media.tenor.com/FY-Gu9lp8lUAAAAi/dancing-polish.gif">
-            </details>
+                </div>
+            </div>
         </section>
 
         <section class="container pantry-bottom">
             <a href="recipes.html">Now cook ></a>
         </section>
-
     </main>
 
     <footer>
@@ -188,6 +203,8 @@
             <p> Cook by yourself :3</p>
         </div>
     </footer>
+
+    <script src="js/pantry-dom.js" defer></script>
 
 </body>
 </html>

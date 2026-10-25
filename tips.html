@@ -6,6 +6,7 @@
     <title>CookFromHome</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/tips.css">
+        <link rel="stylesheet" href="css/dom.css">
 </head>
 <body>
      <header>
@@ -32,6 +33,12 @@
 
         <section class="tips-grid-section">
             <h2>Smart Cooking Hacks</h2>
+            <div class="tips-live-search">
+                <label for="tips-search">Search cooking tips</label>
+                <input id="tips-search" type="search" placeholder="Try: herbs, eggs, sugar...">
+                <p id="tips-result-count" role="status" aria-live="polite">Matching tips: 6</p>
+                <p id="tips-no-results" hidden>No results found</p>
+            </div>
             <div class="tips-grid">
                 <article class="tip-card">
                     <h3>1. Revive Wilted Herbs</h3>
@@ -129,5 +136,6 @@
             <p>Cook by yourself :3</p>
         </div>
      </footer>
+    <script src="js/tips-dom.js" defer></script>
 </body>
 </html>
