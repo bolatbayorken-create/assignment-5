@@ -124,3 +124,19 @@ body.home-page.theme-dark { background: #1c2923; color: #f2eee3; }
     .pantry-add-product form { width: 100%; }
     .pantry-add-product input { width: 100%; }
 }
+
+/* --- ДОБАВЛЕНО ДЛЯ ГАРАНТИРОВАННОГО ПЕРЕКЛЮЧЕНИЯ ТЕМЫ ЧЕРЕЗ JS --- */
+body.theme-dark { background: #1c2923; color: #f2eee3; }
+body.theme-dark header { background: #22372b; border-bottom-color: #627867; }
+body.theme-dark nav a, body.theme-dark .logo { color: #f2eee3; }
+body.theme-dark .home-title,
+body.theme-dark .home-section-title,
+body.theme-dark .home-label,
+body.theme-dark .home-subtitle { color: #f2eee3; }
+body.theme-dark .dom-home-tool,
+body.theme-dark .home-benefit-card { background: #304439; border-color: #657b69; }
+body.theme-dark .home-card-title { color: #d9eaba; }
+body.theme-dark .home-card-text { color: #e6ebe0; }
+body.theme-dark .dom-home-tool input,
+body.theme-dark .home-input { background: #f9f9f3; color: #213329; }
+body.theme-dark footer { background: #14241a; }
