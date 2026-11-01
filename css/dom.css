@@ -125,18 +125,52 @@ body.home-page.theme-dark { background: #1c2923; color: #f2eee3; }
     .pantry-add-product input { width: 100%; }
 }
 
-/* --- ДОБАВЛЕНО ДЛЯ ГАРАНТИРОВАННОГО ПЕРЕКЛЮЧЕНИЯ ТЕМЫ ЧЕРЕЗ JS --- */
-body.theme-dark { background: #1c2923; color: #f2eee3; }
-body.theme-dark header { background: #22372b; border-bottom-color: #627867; }
-body.theme-dark nav a, body.theme-dark .logo { color: #f2eee3; }
-body.theme-dark .home-title,
-body.theme-dark .home-section-title,
-body.theme-dark .home-label,
-body.theme-dark .home-subtitle { color: #f2eee3; }
-body.theme-dark .dom-home-tool,
-body.theme-dark .home-benefit-card { background: #304439; border-color: #657b69; }
-body.theme-dark .home-card-title { color: #d9eaba; }
-body.theme-dark .home-card-text { color: #e6ebe0; }
-body.theme-dark .dom-home-tool input,
-body.theme-dark .home-input { background: #f9f9f3; color: #213329; }
-body.theme-dark footer { background: #14241a; }
+/* --- РАБОЧИЕ СТИЛИ ДЛЯ ТЕМНОЙ ТЕМЫ (ДОБАВЛЕНО) --- */
+body.home-page.theme-dark {
+    background-color: #1c2923 !important;
+    color: #f2eee3 !important;
+}
+
+body.home-page.theme-dark header {
+    background-color: #22372b !important;
+    border-bottom-color: #627867 !important;
+}
+
+body.home-page.theme-dark nav a, 
+body.home-page.theme-dark .logo {
+    color: #f2eee3 !important;
+}
+
+body.home-page.theme-dark .home-title,
+body.home-page.theme-dark .home-section-title,
+body.home-page.theme-dark .home-label,
+body.home-page.theme-dark .home-subtitle,
+body.home-page.theme-dark .dom-home-tool h2 {
+    color: #f2eee3 !important;
+}
+
+body.home-page.theme-dark .dom-home-tool,
+body.home-page.theme-dark .home-benefit-card {
+    background-color: #304439 !important;
+    border-color: #657b69 !important;
+}
+
+body.home-page.theme-dark .home-card-title {
+    color: #d9eaba !important;
+}
+
+body.home-page.theme-dark .home-card-text,
+body.home-page.theme-dark .dom-home-tool p {
+    color: #e6ebe0 !important;
+}
+
+body.home-page.theme-dark .dom-home-tool input,
+body.home-page.theme-dark .home-input {
+    background-color: #f9f9f3 !important;
+    color: #213329 !important;
+}
+
+body.home-page.theme-dark footer {
+    background-color: #14241a !important;
+    color: #f2eee3 !important;
+}
