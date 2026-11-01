@@ -1,6 +1,5 @@
 /* Assignment 5 DOM & Events — added features only */
 
-/* Home: welcome and theme switcher */
 .dom-home-tools {
     max-width: 750px;
     margin: 0 auto 35px;
@@ -36,23 +35,6 @@
 }
 .dom-home-tool button:hover { background: #435b31; }
 
-/* Home page dark theme (Task 1) */
-body.home-page.theme-dark { background: #1c2923; color: #f2eee3; }
-.home-page.theme-dark header { background: #22372b; border-bottom-color: #627867; }
-.home-page.theme-dark nav a, .home-page.theme-dark .logo { color: #f2eee3; }
-.home-page.theme-dark .home-title,
-.home-page.theme-dark .home-section-title,
-.home-page.theme-dark .home-label,
-.home-page.theme-dark .home-subtitle { color: #f2eee3; }
-.home-page.theme-dark .dom-home-tool,
-.home-page.theme-dark .home-benefit-card { background: #304439; border-color: #657b69; }
-.home-page.theme-dark .home-card-title { color: #d9eaba; }
-.home-page.theme-dark .home-card-text { color: #e6ebe0; }
-.home-page.theme-dark .dom-home-tool input,
-.home-page.theme-dark .home-input { background: #f9f9f3; color: #213329; }
-.home-page.theme-dark footer { background: #14241a; }
-
-/* Pantry: add/remove list (Task 4) */
 .pantry-add-product { flex-direction: column; align-items: flex-start; gap: 8px; }
 .pantry-add-product label { font-weight: bold; }
 .pantry-add-product form { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -81,7 +63,6 @@ body.home-page.theme-dark { background: #1c2923; color: #f2eee3; }
 }
 #pantry-product-list button:hover { background: #6c261f; }
 
-/* Pantry: independent accordion questions (Task 2) */
 .faq-question {
     width: 100%;
     border: 0;
@@ -97,7 +78,6 @@ body.home-page.theme-dark { background: #1c2923; color: #f2eee3; }
 .faq-question[aria-expanded="true"]::after { content: ' −'; }
 .faq-answer { padding: 6px 0 2px; line-height: 1.5; }
 
-/* Tips: live search (Task 3) */
 .tips-live-search {
     padding: 20px;
     background: #fff;
@@ -125,7 +105,7 @@ body.home-page.theme-dark { background: #1c2923; color: #f2eee3; }
     .pantry-add-product input { width: 100%; }
 }
 
-/* --- РАБОЧИЕ СТИЛИ ДЛЯ ТЕМНОЙ ТЕМЫ (ДОБАВЛЕНО) --- */
+/* --- ТЕМНАЯ ТЕМА --- */
 body.home-page.theme-dark {
     background-color: #1c2923 !important;
     color: #f2eee3 !important;
