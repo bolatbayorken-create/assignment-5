@@ -1,32 +1,23 @@
+$(document).ready(function() {
+    $("#welcome-button").on("click", function() {
+        const name = $.trim($("#welcome-name").val());
 
+        if (name === "") {
+            $("#welcome-message").text("Please enter your name first.");
+        } else {
+            $("#welcome-message").text("Welcome to CookFromHome, " + name + "!");
+        }
+    });
 
-const welcomeInput = document.getElementById("welcome-name");
-const welcomeMessage = document.querySelector("#welcome-message");
-const welcomeButton = document.getElementById("welcome-button");
+    $("#theme-button").on("click", function() {
+        const darkTheme = $("body").toggleClass("theme-dark").hasClass("theme-dark");
 
-welcomeButton.addEventListener("click", function() {
-    const name = welcomeInput.value.trim();
+        if (darkTheme) {
+            $(this).text("Switch to light theme");
+        } else {
+            $(this).text("Switch to dark theme");
+        }
 
-    if (name === "") {
-        welcomeMessage.textContent = "Please enter your name first.";
-    } else {
-        welcomeMessage.textContent =
-            "Welcome to CookFromHome, " + name + "!";
-    }
-});
-
-
-
-const themeButton = document.getElementById("theme-button");
-
-themeButton.addEventListener("click", function() {
-    const darkTheme = document.body.classList.toggle("theme-dark");
-
-    if (darkTheme) {
-        themeButton.textContent = "Switch to light theme";
-    } else {
-        themeButton.textContent = "Switch to dark theme";
-    }
-
-    themeButton.setAttribute("aria-pressed", String(darkTheme));
+        $(this).attr("aria-pressed", String(darkTheme));
+    });
 });
