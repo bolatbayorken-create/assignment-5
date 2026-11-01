@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный проект</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Наш Проект</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#interactive">&#x418;&#x43d;&#x442;&#x435;&#x440;&#x430;&#x43a;&#x442;&#x438;&#x432;</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <section id="interactive" class="card p-4 shadow-sm mb-4">
+            <h2 class="card-title h4 mb-3">&#x41f;&#x435;&#x440;&#x441;&#x43e;&#x43d;&#x430;&#x43b;&#x44c;&#x43d;&#x43e;&#x435; &#x43f;&#x440;&#x438;&#x432;&#x435;&#x442;&#x441;&#x442;&#x432;&#x438;&#x435; &#x438; &#x43d;&#x430;&#x441;&#x442;&#x440;&#x43e;&#x439;&#x43a;&#x438;</h2>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">&#x420;&#x435;&#x436;&#x438;&#x43c; &#x43e;&#x444;&#x43e;&#x440;&#x43c;&#x43b;&#x435;&#x43d;&#x438;&#x44f;:</span>
+                <button id="theme-toggle-btn" class="btn btn-outline-secondary">&#x422;&#x435;&#x43c;&#x43d;&#x430;&#x44f; &#x442;&#x435;&#x43c;&#x430;</button>
+            </div>
+
+            <div class="mb-3">
+                <label for="name-input" class="form-label">&#x412;&#x432;&#x435;&#x434;&#x438;&#x442;&#x435; &#x432;&#x430;&#x448;&#x435; &#x438;&#x43c;&#x44f;:</label>
+                <input type="text" id="name-input" class="form-control" placeholder="&#x41d;&#x430;&#x43f;&#x440;&#x438;&#x43c;&#x435;&#x440;, &#x410;&#x43d;&#x441;&#x430;&#x440;">
+            </div>
+
+            <div class="alert alert-info mb-0" role="alert">
+                <h3 id="welcome-message" class="h5 mb-0">&#x41f;&#x440;&#x438;&#x432;&#x435;&#x442;, &#x413;&#x43e;&#x441;&#x442;&#x44c;!</h3>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <small>&copy; 2026 &#x41a;&#x43e;&#x43c;&#x430;&#x43d;&#x434;&#x43d;&#x44b;&#x439; &#x43f;&#x440;&#x43e;&#x435;&#x43a;&#x442;. &#x412;&#x441;&#x435; &#x43f;&#x440;&#x430;&#x432;&#x430; &#x437;&#x430;&#x449;&#x438;&#x449;&#x435;&#x43d;&#x44b;.</small>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
