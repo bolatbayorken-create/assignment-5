@@ -43,18 +43,18 @@
                  alt="Fresh homemade food served with colorful vegetables" width="1100" height="880">
         </section>
 
-        <!-- 2. Catalogue: CSS-only radio filters, Flexbox controls, eight Grid cards. -->
+        <!-- 2. Catalogue: combined jQuery search and category filters, eight recipe cards. -->
         <section class="recipes-catalog" id="recipes-catalog" aria-labelledby="catalog-title">
             <div class="recipes-section-title">
                 <span class="recipes-eyebrow">EXPLORE THE COLLECTION</span>
                 <h2 id="catalog-title">What are you cooking today?</h2>
-                <p>Browse eight recipes or filter by meal type. Select “View full recipe” to see the ingredients and steps.</p>
+                <p>Browse eight recipes. Search by name or ingredients and filter by meal type. Select “View full recipe” for the full instructions.</p>
             </div>
-            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-all" checked>
-            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-breakfast">
-            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-lunch">
-            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-dinner">
-            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-dessert">
+            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-all" value="all" checked>
+            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-breakfast" value="breakfast">
+            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-lunch" value="lunch">
+            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-dinner" value="dinner">
+            <input class="recipes-radio" type="radio" name="meal-filter" id="recipes-dessert" value="dessert">
             <div class="recipes-filters" role="group" aria-label="Filter recipes by category">
                 <label for="recipes-all">All recipes</label>
                 <label for="recipes-breakfast">Breakfast</label>
@@ -62,6 +62,15 @@
                 <label for="recipes-dinner">Dinner</label>
                 <label for="recipes-dessert">Desserts</label>
             </div>
+            <div class="recipes-search-controls">
+                <div class="recipes-search-field">
+                    <label for="recipes-search">Search recipes</label>
+                    <input type="search" id="recipes-search" placeholder="Try pasta, egg, salad..." autocomplete="off">
+                </div>
+                <button type="button" id="recipes-clear-filters" class="recipes-clear-button">Clear filters</button>
+            </div>
+            <p id="recipes-results-count" class="recipes-results-count" role="status" aria-live="polite">Showing 8 of 8 recipes</p>
+            <p id="recipes-no-results" class="recipes-no-results" hidden>No results found. Try another search or category.</p>
             <div class="recipes-grid">
                 <article class="recipes-card" id="recipe-pancakes" data-category="breakfast">
                     <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=720&amp;auto=format&amp;fit=crop"
@@ -414,5 +423,8 @@
             <p>Cook by yourself :3</p>
         </div>
     </footer>
+    <!-- jQuery must load before the external script. Both scripts are deferred. -->
+    <script src="js/vendor/jquery-3.6.0.min.js" defer></script>
+    <script src="js/recipes-jquery.js" defer></script>
 </body>
 </html>
