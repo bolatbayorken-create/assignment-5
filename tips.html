@@ -3,54 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CookFromHome - Tips</title>
+    <title>Tips & Hacks — CookFromHome</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/tips.css">
 </head>
 <body>
-    <header>
-        <div class="logo">CookFromHome</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="recipes.html">Recipes</a>
-            <a href="planner.html">Planner</a>
-            <a href="tips.html">Tips</a>
-            <a href="pantry.html">Pantry</a>
-            <a href="forms.html">Forms</a>
-        </nav>
+    <!-- Навигация сайта -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <h1 class="logo">CookFromHome</h1>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="recipes.html">Recipes</a>
+                <a href="planner.html">Planner</a>
+                <a href="tips.html" class="active">Tips</a>
+                <a href="pantry.html">Pantry</a>
+                <a href="forms.html">Forms</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="tips-container">
-        <div class="tips-top-card">
-            <h1>Kitchen Tips & Food Hacks</h1>
-            <p class="tips-subtitle">Master essential culinary skills, learn how to store ingredients properly, and discover smart substitutions.</p>
-        </div>
+    <main class="container main-content">
+        <!-- Заголовок страницы с розовым акцентом в стиле Planner -->
+        <section class="tips-hero text-center">
+            <div class="hero-badge">Kitchen Wisdom 🌸</div>
+            <h2>Kitchen Tips & Food Hacks</h2>
+            <p>Master essential culinary skills, learn how to store ingredients properly, and discover smart substitutions.</p>
+        </section>
 
-        <div class="tips-card">
-            <h2>Smart Cooking Hacks</h2>
-            <div class="tips-search-box">
-                <label for="tipsSearch">Search cooking tips</label>
-                <input type="text" id="tipsSearch" class="tips-search-input" placeholder="Try: herbs, eggs, sugar...">
+        <!-- Блок поиска (Задание 3) -->
+        <section class="card shadow-sm p-4 mb-4">
+            <h3 class="h5 mb-3">Smart Cooking Hacks</h3>
+            <div class="mb-3">
+                <label for="searchInput" class="form-label">Search cooking tips</label>
+                <input type="text" id="searchInput" class="form-control" placeholder="Try: herbs, eggs, sugar...">
             </div>
-            <div id="matching-tips-count" class="tips-subtitle">Matching tips: 6</div>
+            <div id="matchCount" class="text-muted small">Matching tips: 6</div>
+            <div id="noResultsMessage" class="text-danger mt-2" style="display: none;">No results found. Try a different keyword!</div>
+        </section>
+
+        <!-- Сетка советов (карточки) -->
+        <div class="row tips-grid" id="tipsContainer">
+            <div class="col-md-4 mb-4 filter-item">
+                <div class="card h-100 p-3 tip-card">
+                    <h4 class="h6 font-weight-bold text-success">1. Revive Wilted Herbs</h4>
+                    <p class="text-muted small mt-2">Soak limp cilantro, parsley, or lettuce in a bowl of ice water with a splash of lemon juice for 15-30 minutes to make them crisp again.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 filter-item">
+                <div class="card h-100 p-3 tip-card">
+                    <h4 class="h6 font-weight-bold text-success">2. Fix Over-Salted Soup</h4>
+                    <p class="text-muted small mt-2">Drop a peeled raw potato or a small amount of rice into the pot. It will absorb excess salt while simmering. Remove before serving.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 filter-item">
+                <div class="card h-100 p-3 tip-card">
+                    <h4 class="h6 font-weight-bold text-success">3. Ripen Avocados Fast</h4>
+                    <p class="text-muted small mt-2">Place an unripe avocado in a brown paper bag with a banana or an apple. Natural ethylene gas released by the fruit accelerates ripening.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 filter-item">
+                <div class="card h-100 p-3 tip-card">
+                    <h4 class="h6 font-weight-bold text-success">4. Prevent Onion Tears</h4>
+                    <p class="text-muted small mt-2">Chill the onion in the refrigerator for 30 minutes before cutting. Lower temperatures slow down the release of the enzyme that causes crying.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 filter-item">
+                <div class="card h-100 p-3 tip-card">
+                    <h4 class="h6 font-weight-bold text-success">5. Test Egg Freshness</h4>
+                    <p class="text-muted small mt-2">Submerge eggs in a bowl of cold water. If they sink flat to the bottom, they are very fresh. If they stand up or float, they are old.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 filter-item">
+                <div class="card h-100 p-3 tip-card">
+                    <h4 class="h6 font-weight-bold text-success">6. Soften Hard Brown Sugar</h4>
+                    <p class="text-muted small mt-2">Place hardened brown sugar in a microwave-safe bowl with a damp paper towel and microwave in 20-second bursts until soft.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="tips-card">
-            <h3>1. Revive Wilted Herbs</h3>
-            <p>Soak limp cilantro, parsley, or lettuce in a bowl of ice water with a splash of lemon juice for 15-30 minutes to make them crisp again.</p>
-        </div>
-
-        <div class="tips-card">
-            <h3>2. Fix Over-Salted Soup</h3>
-            <p>Drop a peeled raw potato or a small amount of rice into the pot. It will absorb excess salt while simmering. Remove before serving.</p>
-        </div>
-
-        <div class="tips-card">
-            <h3>3. Ripen Avocados Fast</h3>
-            <p>Place an unripe avocado in a brown paper bag with a banana or an apple. Natural ethylene gas released by the fruit accelerates ripening.</p>
-        </div>
+        <!-- Таблица замен -->
+        <section class="my-5">
+            <h3 class="text-center mb-3">Emergency Ingredient Substitutions</h3>
+            <p class="text-center text-muted mb-4">Out of a key ingredient? Use these tested kitchen swaps in a pinch.</p>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr class="bg-success text-white">
+                            <th>Original Ingredient</th>
+                            <th>Amount</th>
+                            <th>Best Substitute</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Buttermilk</td>
+                            <td>1 cup</td>
+                            <td>1 tbsp lemon juice + milk</td>
+                            <td>Let sit for 5 minutes before using.</td>
+                        </tr>
+                        <tr>
+                            <td>Sour Cream</td>
+                            <td>1 cup</td>
+                            <td>Plain Greek Yogurt</td>
+                            <td>Provides a nearly identical texture and tang.</td>
+                        </tr>
+                        <tr>
+                            <td>Brown Sugar</td>
+                            <td>1 cup</td>
+                            <td>1 cup white sugar + 1 tbsp molasses</td>
+                            <td>Mix well before incorporating into batter.</td>
+                        </tr>
+                        <tr>
+                            <td>Eggs (for baking)</td>
+                            <td>1 egg</td>
+                            <td>1/4 cup unsweetened applesauce</td>
+                            <td>Great for moisture in cakes and muffins.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
+    <!-- Подвал -->
+    <footer class="site-footer bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">CookFromHome &copy; 2026 | Cook by yourself :3</p>
+        </div>
+    </footer>
+
+    <!-- Подключаем jQuery и наш скрипт -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/tips-dom.js"></script>
 </body>
 </html>
