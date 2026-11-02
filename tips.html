@@ -1,141 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CookFromHome</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/tips.css">
-        <link rel="stylesheet" href="css/dom.css">
-</head>
-<body>
-     <header>
-        <div class="container header-content">
-            <a href="index.html" class="logo"> CookFromHome </a>
+.tips-container {
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
 
-            <nav>
-                 <a href="index.html">Home</a>
-                 <a href="recipes.html">Recipes</a>
-                 <a href="planner.html">Planner</a>
-                 <a href="tips.html">Tips</a>
-                 <a href="pantry.html">Pantry</a>
-                 <a href="forms.html">Forms</a>
-            </nav>
-        </div>
-     </header>
+/* Возвращаем нормальные белые карточки с рамками и тенями */
+.tips-card, .tips-top-card, .substitution-card, .tip-item, .tips-box {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eae6d9;
+}
 
-     <main class="tips-main">
-        
-        <section class="tips-hero">
-            <h1>Kitchen Tips & Food Hacks</h1>
-            <p>Master essential culinary skills, learn how to store ingredients properly, and discover smart substitutions.</p>
-        </section>
+.tips-top-card h1, .tips-container h2, h1, h2 {
+    color: #3d5240;
+    font-weight: 700;
+}
 
-        <section class="tips-grid-section">
-            <h2>Smart Cooking Hacks</h2>
-            <div class="tips-live-search">
-                <label for="tips-search">Search cooking tips</label>
-                <input id="tips-search" type="search" placeholder="Try: herbs, eggs, sugar...">
-                <p id="tips-result-count" role="status" aria-live="polite">Matching tips: 6</p>
-                <p id="tips-no-results" hidden>No results found</p>
-            </div>
-            <div class="tips-grid">
-                <article class="tip-card">
-                    <h3>1. Revive Wilted Herbs</h3>
-                    <p>Soak limp cilantro, parsley, or lettuce in a bowl of ice water with a splash of lemon juice for 15-30 minutes to make them crisp again.</p>
-                </article>
-                <article class="tip-card">
-                    <h3>2. Fix Over-Salted Soup</h3>
-                    <p>Drop a peeled raw potato or a small amount of rice into the pot. It will absorb excess salt while simmering. Remove before serving.</p>
-                </article>
-                <article class="tip-card">
-                    <h3>3. Ripen Avocados Fast</h3>
-                    <p>Place an unripe avocado in a brown paper bag with a banana or an apple. Natural ethylene gas released by the fruit accelerates ripening.</p>
-                </article>
-                <article class="tip-card">
-                    <h3>4. Prevent Onion Tears</h3>
-                    <p>Chill the onion in the refrigerator for 30 minutes before cutting. Lower temperatures slow down the release of the enzyme that causes crying.</p>
-                </article>
-                <article class="tip-card">
-                    <h3>5. Test Egg Freshness</h3>
-                    <p>Submerge eggs in a bowl of cold water. If they sink flat to the bottom, they are very fresh. If they stand up or float, they are old.</p>
-                </article>
-                <article class="tip-card">
-                    <h3>6. Soften Hard Brown Sugar</h3>
-                    <p>Place hardened brown sugar in a microwave-safe bowl with a damp paper towel and microwave in 20-second bursts until soft.</p>
-                </article>
-            </div>
-        </section>
+.tips-search-input {
+    width: 100%;
+    max-width: 480px;
+    padding: 11px 16px;
+    border: 1px solid #889f77;
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #2d4030;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
 
-        <section class="tips-table-section">
-            <h2>Emergency Ingredient Substitutions</h2>
-            <p>Out of a key ingredient? Use these tested kitchen swaps in a pinch.</p>
-            <div class="table-responsive">
-                <table class="substitutions-table">
-                    <thead>
-                        <tr>
-                            <th>Original Ingredient</th>
-                            <th>Amount</th>
-                            <th>Best Substitute</th>
-                            <th>Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Buttermilk</td>
-                            <td>1 cup</td>
-                            <td>1 tbsp lemon juice + milk</td>
-                            <td>Let sit for 5 minutes before using.</td>
-                        </tr>
-                        <tr>
-                            <td>Sour Cream</td>
-                            <td>1 cup</td>
-                            <td>Plain Greek Yogurt</td>
-                            <td>Provides a nearly identical texture and tang.</td>
-                        </tr>
-                        <tr>
-                            <td>Brown Sugar</td>
-                            <td>1 cup</td>
-                            <td>1 cup white sugar + 1 tbsp molasses</td>
-                            <td>Mix well before incorporating into batter.</td>
-                        </tr>
-                        <tr>
-                            <td>Eggs (for baking)</td>
-                            <td>1 egg</td>
-                            <td>1/4 cup unsweetened applesauce</td>
-                            <td>Great for moisture in cakes and muffins.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+.tips-search-input:focus {
+    border-color: #d98282;
+    box-shadow: 0 0 0 3px rgba(217, 130, 130, 0.15);
+}
 
-        <section class="tips-storage-section">
-            <h2>Proper Food Storage Guide</h2>
-            <div class="storage-flex-container">
-                <div class="storage-card">
-                    <h3>Produce Storage</h3>
-                    <p>Keep potatoes and onions separate; onions emit gases that cause potatoes to sprout faster. Store leafy greens with a dry paper towel.</p>
-                </div>
-                <div class="storage-card">
-                    <h3>Meat & Poultry</h3>
-                    <p>Always store raw meat on the lowest shelf of the refrigerator in a container to prevent juices from dripping onto other foods.</p>
-                </div>
-                <div class="storage-card">
-                    <h3>Dry Goods</h3>
-                    <p>Store flour, grains, and pasta in airtight glass or plastic containers in a cool, dark place to protect them from pantry pests and humidity.</p>
-                </div>
-            </div>
-        </section>
+#matching-tips-count, .tips-subtitle {
+    color: #6b7c6e;
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
 
-    </main>
+.substitution-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
 
-     <footer>
-        <div class="container footer-content">
-            <h2>CookFromHome</h2>
-            <p>Cook by yourself :3</p>
-        </div>
-     </footer>
-    <script src="js/tips-dom.js" defer></script>
-</body>
-</html>
+.substitution-table th {
+    background-color: #4a5d4e;
+    color: #ffffff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.substitution-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0efe6;
+    color: #3d5240;
+    font-size: 0.95rem;
+}
+
+.substitution-table tr:hover {
+    background-color: #fcfbf7;
+}
