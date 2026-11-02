@@ -1,67 +1,110 @@
-.tips-container {
-    padding-top: 20px;
-    padding-bottom: 50px;
+
+body {
+    background-color: #fcf8f2;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding-top: 80px; 
 }
 
-.tips-card, .tips-top-card, .substitution-card, .tip-item, .tips-box {
+.site-header {
     background: #ffffff;
-    border-radius: 16px;
-    padding: 24px 28px;
-    margin-bottom: 24px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    border: 1px solid #eae6d9;
-}
-
-.tips-top-card h1, .tips-container h2, h1, h2 {
-    color: #3d5240;
-    font-weight: 700;
-}
-
-.tips-search-input {
+    border-bottom: 1px solid #eaeaea;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 480px;
-    padding: 11px 16px;
-    border: 1px solid #889f77;
-    background-color: #ffffff;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 24px;
+    color: #385e42;
+    font-weight: bold;
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: #385e42;
+    border-bottom: 2px solid #385e42;
+    padding-bottom: 3px;
+}
+
+.main-content {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+
+.tips-hero {
+    background: #fff0f3;
+    border: 2px dashed #ffb3c1;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: #ff758c;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.tips-hero h2 {
+    color: #385e42;
+    margin-bottom: 10px;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
     border-radius: 10px;
-    color: #2d4030;
-    font-size: 0.95rem;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
 
-.tips-search-input:focus {
-    border-color: #d98282;
-    box-shadow: 0 0 0 3px rgba(217, 130, 130, 0.15);
+.tip-card {
+    transition: transform 0.2s ease;
 }
 
-#matching-tips-count, .tips-subtitle {
-    color: #6b7c6e;
-    font-size: 0.9rem;
-    margin-top: 8px;
+.tip-card:hover {
+    transform: translateY(-3px);
+    border-color: #ffb3c1; 
 }
 
-.substitution-table {
+.table {
     width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
     border-collapse: collapse;
-    margin-top: 15px;
 }
 
-.substitution-table th {
-    background-color: #4a5d4e;
-    color: #ffffff;
-    padding: 12px 16px;
-    text-align: left;
-    font-weight: 600;
+.table th, .table td {
+    padding: 12px;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
 }
 
-.substitution-table td {
-    padding: 12px 16px;
-    border-bottom: 1px solid #f0efe6;
-    color: #3d5240;
-    font-size: 0.95rem;
-}
-
-.substitution-table tr:hover {
-    background-color: #fcfbf7;
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.015);
 }
