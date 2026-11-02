@@ -3,16 +3,42 @@
     padding-bottom: 50px;
 }
 
-.tips-card, .tips-top-card, .substitution-card {
+/* Универсальное правило: превращаем ВСЕ блоки, карточки и секции на странице в аккуратные белые карточки */
+.tips-container div, 
+.tips-container section, 
+.tips-card, 
+.tips-top-card, 
+.substitution-card, 
+.tip-item, 
+.tips-box {
     background: #ffffff;
     border-radius: 16px;
-    padding: 24px 28px;
-    margin-bottom: 24px;
+    padding: 20px 24px;
+    margin-bottom: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     border: 1px solid #eae6d9;
 }
 
-.tips-top-card h1, .tips-container h2 {
+/* Исключение для таблицы, чтобы она не ломалась внутри карточки */
+.substitution-table, .substitution-table tr, .substitution-table td, .substitution-table th {
+    background: transparent !important;
+    border: none;
+    box-shadow: none;
+    padding: 12px 16px;
+}
+
+.substitution-table th {
+    background-color: #4a5d4e !important;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.substitution-table td {
+    border-bottom: 1px solid #f0efe6;
+    color: #3d5240;
+}
+
+h1, h2, h3, h4, .tips-top-card h1, .tips-container h2 {
     color: #3d5240;
     font-weight: 700;
 }
@@ -39,29 +65,4 @@
     color: #6b7c6e;
     font-size: 0.9rem;
     margin-top: 8px;
-}
-
-.substitution-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
-
-.substitution-table th {
-    background-color: #4a5d4e;
-    color: #ffffff;
-    padding: 12px 16px;
-    text-align: left;
-    font-weight: 600;
-}
-
-.substitution-table td {
-    padding: 12px 16px;
-    border-bottom: 1px solid #f0efe6;
-    color: #3d5240;
-    font-size: 0.95rem;
-}
-
-.substitution-table tr:hover {
-    background-color: #fcfbf7;
 }
