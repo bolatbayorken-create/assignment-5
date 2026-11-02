@@ -52,5 +52,12 @@ $(document).ready(function() {
         updateState();
     });
 
+    // Оживляем FAQ (аккордеон) для Оркена
+    $('.faq-question').on('click', function() {
+        const $answer = $(this).next('.faq-answer');
+        $answer.slideToggle(200);
+        $(this).toggleClass('active');
+    });
+
     updateState();
 });
