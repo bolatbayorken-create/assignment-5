@@ -1,0 +1,86 @@
+/* Assignment 6, Task 7 — shared responsive and accessibility improvements.
+   Keep this stylesheet LAST, after each page's own CSS. */
+:root { --cfh-green: #315b3e; --cfh-green-dark: #213d2c; --cfh-focus: #edba69; }
+html { scroll-behavior: smooth; }
+body { font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; line-height: 1.5; }
+img, svg, video { max-width: 100%; height: auto; }
+button, input, select, textarea { font: inherit; }
+body > header { background: #fffdf8; border-bottom: 1px solid #dbe3d6; }
+body > header .header-content { padding-top: 12px; padding-bottom: 12px; }
+body > header .logo { color: var(--cfh-green-dark); letter-spacing: -.035em; font-weight: 800; }
+body > header nav { gap: 6px; }
+body > header nav a { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 8px 12px; border-radius: 9px; color: #294632; font-weight: 650; text-decoration: none; transition: background-color .2s; }
+body > header nav a:hover { background: #e5efdf; }
+body > header nav a[aria-current="page"] { background: #315b3e; color: white; }
+body > footer { background: #213d2c; color: #fff; }
+body > footer .footer-content { gap: 15px; }
+body > footer h2 { margin: 0; font-size: 1.25rem; }
+body > footer p { margin: 0; }
+.skip-link { position: absolute; left: 12px; top: -70px; z-index: 100; padding: 12px 16px; border-radius: 8px; background: #fff; color: #183b27; font-weight: 700; }
+.skip-link:focus { top: 12px; }
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible { outline: 3px solid var(--cfh-focus); outline-offset: 3px; }
+:where(p, li, td, th, h1, h2, h3, h4, label) { overflow-wrap: break-word; }
+/* Home and planner layouts should shrink instead of forcing sideways scroll. */
+.home-input-group > input, .add-item-box > input { min-width: 0; }
+.planner-grid-layout > *, .planner-wrapper, #daysContainer { min-width: 0; }
+.planner-wrapper { width: min(94%, 1100px); }
+.planner-header-box { overflow-wrap: anywhere; }
+.meal-item-list li { gap: 10px; }
+.meal-left { min-width: 0; }
+.meal-left span { overflow-wrap: anywhere; }
+/* Tips table scrolls within its own area on narrow screens. */
+.tips-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.tips-main .table-responsive { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.substitutions-table { min-width: 620px; }
+/* Pantry layout can wrap long product names and inputs. */
+.pantry-main > *, .pantry-top-content > *, .pantry-shelf > * { min-width: 0; }
+.pantry-add-product { max-width: 100%; }
+.pantry-add-product form { max-width: 100%; }
+.pantry-add-product input { min-width: 0; max-width: 100%; }
+.note { transform: none; }
+/* Accessible motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+@media (max-width: 960px) {
+    body > header .header-content { justify-content: center; text-align: center; }
+    body > header nav { justify-content: center; }
+    .home-benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .pantry-main { gap: 22px; }
+}
+@media (max-width: 768px) {
+    .home-benefits-grid { grid-template-columns: minmax(0, 1fr); }
+    .home-hero { padding: 38px 16px; }
+    .home-benefits { padding: 32px 16px 55px; }
+    .planner-grid-layout { grid-template-columns: minmax(0, 1fr); }
+    .pantry-main { grid-template-columns: minmax(0, 1fr); }
+    .pantry-top-content { flex-direction: column; align-items: stretch; }
+    .pantry-top-content h1 { font-size: clamp(2.2rem, 8vw, 3.3rem); }
+    .pantry-shelf { grid-template-columns: minmax(0, 1fr); }
+    .pantry-shelf-title { border-right: 0; padding: 12px 10px; }
+    .pantry-log-row { grid-template-columns: minmax(0, 1fr); }
+    body > footer .footer-content { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 600px) {
+    body > header .header-content { gap: 8px; }
+    body > header .logo { font-size: 1.4rem; }
+    body > header nav { width: 100%; gap: 4px; }
+    body > header nav a { min-height: 42px; padding: 9px 10px; font-size: .91rem; }
+    .container { width: min(92%, 1200px); }
+    .home-input-group, .add-item-box { flex-direction: column; }
+    .home-input-group > *, .add-item-box > * { width: 100%; }
+    .planner-wrapper { width: min(94%, 1100px); }
+    .planner-header-box { padding: 18px 12px; }
+    .day-node, .sidebar-card { padding: 14px; }
+    .meal-item-list li { align-items: flex-start; }
+    .meal-left { flex-wrap: wrap; }
+    .meal-tag { min-width: 0; }
+    .pantry-top { padding: 38px 0; }
+    .tips-main { padding: 30px 14px 55px; }
+    .tips-hero h1 { font-size: clamp(1.85rem, 8vw, 2.5rem); }
+    .tips-main h2 { font-size: clamp(1.4rem, 6vw, 2rem); }
+    .tips-grid { grid-template-columns: minmax(0, 1fr); }
+    .tip-card, .storage-card { padding: 18px; }
+    body > footer { padding: 24px 0; }
+}
