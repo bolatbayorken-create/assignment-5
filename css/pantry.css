@@ -1,232 +1,143 @@
-.pantry {
-    background-color: rgb(243, 238, 226);
-    color: rgb(29, 45, 38);
-}
-
-
-/* top */
-
 .pantry-top {
-    padding: 70px 0;
-    background-color: rgb(28, 62, 49);
-    color: white;
-    border-bottom: 8px solid rgb(219, 155, 82);
-}
-
-.pantry-top-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
+    padding: 30px 0 10px 0;
 }
 
 .pantry-top-content h1 {
-    margin: 0;
-    font-size: 60px;
+    font-size: 2rem;
+    color: #4a5d4e;
+    margin-bottom: 15px;
 }
 
-.pantry-add-product {
+.pantry-add-product label {
+    font-weight: 600;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.add-product {
     display: flex;
-    gap: 8px;
+    gap: 10px;
+    max-width: 400px;
 }
 
-.pantry-add-product input {
-    width: 300px;
-    padding: 12px;
-    border: 2px solid white;
-    background-color: rgb(28, 62, 49);
-    color: white;
+.add-product input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    outline: none;
 }
 
 .add-product button {
-    padding: 12px 20px;
-    border: 2px solid rgb(219, 155, 82);
-    background-color: rgb(219, 155, 82);
-    color: rgb(28, 62, 49);
-    font-weight: bold;
+    background-color: #889f77;
+    color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-product button:hover {
+    background-color: #728862;
+}
+
+#pantry-add-feedback {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 6px;
+}
+
+.pantry-added {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.pantry-added h2 {
+    color: #4a5d4e;
+    margin-bottom: 10px;
+}
+
+#pantry-product-list li {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#pantry-product-list li button {
+    background-color: #e76f51;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
     cursor: pointer;
 }
 
-
-/* main */
-
 .pantry-main {
-    padding: 70px 0;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 50px;
+    gap: 20px;
+    margin-top: 25px;
 }
-
-
-/* shelves */
 
 .pantry-shelf {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    min-height: 115px;
-    border-bottom: 10px solid rgb(130, 94, 57);
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
-.pantry-helf-title {
-    padding: 20px 15px 15px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-right: 5px solid rgb(170, 160, 140);
-}
-
-.shelf-title p {
+.pantry-shelf-title h4 {
+    color: #4a5d4e;
     margin: 0;
-    color: rgb(125, 125, 118);
-    font-size: 12px;
 }
 
 .foods {
-    padding: 20px;
     display: flex;
+    gap: 8px;
     flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 10px;
+    margin-top: 10px;
 }
 
 .foods p {
+    background: #f0f4f0;
+    color: #333;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
     margin: 0;
-    padding: 7px 12px;
-    background-color: rgb(252, 249, 242);
-    border: 1px solid rgb(108, 118, 105);
-    border-radius: 5px;
-    font-size: 14px;
-    
+    transition: background 0.2s;
 }
 
-
-/* note */
+.foods p:hover {
+    background: #d8e4d8;
+}
 
 .note {
-    padding: 30px;
-    align-self: start;
-    background-color: rgb(238, 209, 129);
-    border: 2px solid rgb(52, 76, 61);
-    box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.08);
-    transform: rotate(1deg);
-}
-
-.note h2 {
-    margin-top: 0;
-    font-size: 28px;
+    background: #fff9e6;
+    border: 1px solid #ffe8a3;
+    padding: 20px;
+    border-radius: 12px;
+    height: fit-content;
 }
 
 .note-row {
-    padding: 15px 0;
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-    border-top: 1px dashed rgb(52, 76, 61);
-}
-
-.note-row p {
-    margin: 3px 0 0;
-    font-size: 13px;
-}
-
-.urgent {
-    color: rgb(176, 55, 55);
-    font-weight: bold;
-}
-
-
-/* table */
-
-.pantry-log {
-    padding-bottom: 60px;
-}
-
-.log {
-    background-color: rgb(251, 248, 241);
-    border: 1px solid rgb(188, 180, 164);
-    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.05);
-}
-
-.pantry-log-row {
-    padding: 15px;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
     align-items: center;
-    gap: 20px;
-    border-bottom: 1px solid rgb(210, 202, 190);
-}
-
-.log-row:last-child {
-    border-bottom: none;
-}
-
-.log-row p {
-    margin: 0;
-    font-size: medium;
-}
-
-.log-head {
-    background-color: rgb(31, 70, 55);
-    color: white;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-.status {
-    width: fit-content;
-    padding: 4px 8px;
-    font-size: 11px;
-    font-weight: bold;
-    border: 1px solid rgb(31, 70, 55);
-    border-radius: 5px;
-}
-
-.fresh {
-    background-color: rgb(217, 232, 204);
-}
-
-.soon {
-    background-color: rgb(245, 198, 109);
-}
-
-.stock {
-    background-color: rgb(236, 236, 228);
-}
-
-.pantry-bottom {
-    padding: 20px 0 60px;
-    text-align: right;
-}
-
-
-.pantry-bottom a {
-    color: rgb(28, 62, 49);
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* Demo and FAQ*/
-.demo-note {
-    margin: 0 0 8px 0;
-    font-size: 11px;
-    color: rgb(219, 155, 82);
-}
-
-.pantry-faq {
-    padding-bottom: 40px;
-}
-
-.pantry-faq h2 {
-    margin-bottom: 15px;
-    font-size: 24px;
-}
-
-.faq-item summary {
-    font-weight: bold;
-}
-
-.faq-item {
-    background-color: rgb(251, 248, 241);
-    border: 1px solid rgb(188, 180, 164);
-    padding: 12px 15px;
+    border-bottom: 1px dashed #e0d0a0;
+    padding: 8px 0;
 }
