@@ -128,33 +128,33 @@
             </div>
         </section>
 
-        <!-- Task 5: jQuery Form Validation Section -->
-        <section class="tips-form-section" style="max-width: 800px; margin: 60px auto 20px; background: #ffffff; padding: 35px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #dcd2b4;">
-            <h2 style="color: #426c53; margin-bottom: 10px;">Get Weekly Kitchen Tips</h2>
-            <p style="color: #617066; margin-bottom: 25px;">Subscribe with your details to receive our best culinary hacks directly in your inbox.</p>
+
+         <section class="tips-form-section">
+            <h2>Get Weekly Kitchen Tips</h2>
+            <p>Subscribe with your details to receive our best culinary hacks directly in your inbox.</p>
             
             <form id="tipsContactForm" novalidate>
-                <div style="margin-bottom: 20px;">
-                    <label for="tipUserName" style="display: block; font-weight: bold; margin-bottom: 8px; color: #263c2e;">Your Name</label>
-                    <input type="text" id="tipUserName" class="form-control" placeholder="Enter your name" style="width: 100%; padding: 12px; border: 1px solid #b4af96; border-radius: 6px; box-sizing: border-box;">
-                    <div class="invalid-feedback" style="color: #c43a3a; font-size: 13px; margin-top: 5px; display: none;">Name must contain at least 2 characters.</div>
+                <div class="tips-form-group">
+                    <label for="tipUserName">Your Name</label>
+                    <input type="text" id="tipUserName" class="tips-input" placeholder="Enter your name">
+                    <div class="invalid-feedback">Name must contain at least 2 characters.</div>
                 </div>
 
-                <div style="margin-bottom: 20px;">
-                    <label for="tipUserEmail" style="display: block; font-weight: bold; margin-bottom: 8px; color: #263c2e;">Email Address</label>
-                    <input type="email" id="tipUserEmail" class="form-control" placeholder="example@domain.com" style="width: 100%; padding: 12px; border: 1px solid #b4af96; border-radius: 6px; box-sizing: border-box;">
-                    <div class="invalid-feedback" style="color: #c43a3a; font-size: 13px; margin-top: 5px; display: none;">Please enter a valid email address (e.g., user@mail.com).</div>
+                <div class="tips-form-group">
+                    <label for="tipUserEmail">Email Address</label>
+                    <input type="email" id="tipUserEmail" class="tips-input" placeholder="example@domain.com">
+                    <div class="invalid-feedback">Please enter a valid email address (e.g., user@mail.com).</div>
                 </div>
 
-                <div style="margin-bottom: 25px;">
-                    <label for="tipUserMessage" style="display: block; font-weight: bold; margin-bottom: 8px; color: #263c2e;">Your Question or Topic</label>
-                    <textarea id="tipUserMessage" class="form-control" rows="3" placeholder="What tips would you like to see?" style="width: 100%; padding: 12px; border: 1px solid #b4af96; border-radius: 6px; box-sizing: border-box;"></textarea>
-                    <div class="invalid-feedback" style="color: #c43a3a; font-size: 13px; margin-top: 5px; display: none;">Message must be at least 5 characters long.</div>
+                <div class="tips-form-group">
+                    <label for="tipUserMessage">Your Question or Topic</label>
+                    <textarea id="tipUserMessage" class="tips-input" rows="3" placeholder="What tips would you like to see?"></textarea>
+                    <div class="invalid-feedback">Message must be at least 5 characters long.</div>
                 </div>
 
-                <button type="submit" style="background: #426c53; color: white; border: none; padding: 12px 25px; border-radius: 6px; font-weight: bold; cursor: pointer; width: 100%; font-size: 1rem; transition: background 0.3s;">Submit Subscription</button>
+                <button type="submit" class="tips-submit-btn">Submit Subscription</button>
                 
-                <div id="tipsFormSuccess" class="alert-success" style="margin-top: 20px; padding: 15px; background: #e1f2e5; border: 1px solid #90c79e; color: #24683b; border-radius: 6px; text-align: center; font-weight: 500;" hidden>
+                <div id="tipsFormSuccess" class="tips-success-msg" hidden>
                     Demo: Thank you! Your subscription request has been validated successfully (Frontend-only simulation).
                 </div>
             </form>
@@ -169,9 +169,9 @@
         </div>
      </footer>
 
-     <!-- jQuery CDN -->
-     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-     <!-- Your custom tips scripts (including live search & form validation) -->
-     <script src="js/tips-dom.js" defer></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="js/tips-dom.js" defer></script>
 </body>
 </html>
