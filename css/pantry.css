@@ -1,20 +1,33 @@
 .pantry {
-    padding-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 50px;
 }
 
-.pantry-top-content {
+.pantry-top-card, 
+.pantry-added-card, 
+.pantry-shelf, 
+.note-card, 
+.pantry-log-card, 
+.pantry-faq-card {
     background: #ffffff;
+    border-radius: 16px;
     padding: 24px 28px;
-    border-radius: 14px;
-    margin-top: 25px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    margin-bottom: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eae6d9;
 }
 
-.pantry-top-content h1 {
+.pantry-top-card h1 {
     font-size: 2.2rem;
     color: #3d5240;
-    margin-bottom: 16px;
+    margin-bottom: 6px;
     font-weight: 700;
+}
+
+.pantry-top-card .subtitle {
+    color: #6b7c6e;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
 }
 
 .pantry-add-product label {
@@ -22,130 +35,107 @@
     color: #3d5240;
     display: block;
     margin-bottom: 8px;
-    font-size: 0.95rem;
 }
 
 .add-product {
     display: flex;
     gap: 12px;
-    max-width: 450px;
+    max-width: 480px;
 }
 
 .add-product input {
     flex: 1;
-    padding: 10px 14px;
-    border: 1px solid #d2ded0;
+    padding: 11px 16px;
+    border: 1px solid #889f77;
     background-color: #ffffff;
-    border-radius: 8px;
+    border-radius: 10px;
     color: #2d4030;
     font-size: 0.95rem;
     outline: none;
-    transition: border-color 0.2s;
-}
-
-.add-product input:focus {
-    border-color: #728862;
 }
 
 .add-product button {
-    background-color: #728862;
+    background-color: #889f77;
     color: #ffffff;
     border: none;
-    padding: 10px 22px;
-    border-radius: 8px;
-    font-weight: 600;
+    padding: 11px 22px;
+    border-radius: 10px;
+    font-weight: 700;
     font-size: 0.9rem;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
 .add-product button:hover {
-    background-color: #5c704f;
+    background-color: #6d845c;
 }
 
 #pantry-add-feedback {
     font-size: 0.85rem;
-    color: #778875;
-    margin-top: 8px;
+    color: #556653;
+    margin-top: 10px;
     margin-bottom: 0;
 }
 
-.pantry-added {
-    background: #ffffff;
-    padding: 24px 28px;
-    border-radius: 14px;
-    margin-top: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+.pantry-added-card h2 {
+    color: #3d5240;
+    margin-bottom: 4px;
+    font-size: 1.4rem;
 }
 
-.pantry-added h2 {
-    color: #3d5240;
-    margin-bottom: 6px;
-    font-size: 1.5rem;
-    font-weight: 700;
+.count-text {
+    color: #6b7c6e;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
 }
 
 #pantry-empty-list {
-    color: #889985;
+    color: #8fa08e;
     font-style: italic;
-    margin-top: 8px;
+    margin: 10px 0;
 }
 
 #pantry-product-list {
     list-style: none;
     padding: 0;
-    margin-top: 15px;
+    margin: 10px 0 0 0;
 }
 
 #pantry-product-list li {
-    background: #f8faf7;
-    border: 1px solid #e1ebe0;
-    border-radius: 8px;
-    padding: 10px 16px;
-    margin-bottom: 8px;
+    background: #f8faf6;
+    border: 1px solid #e2ebd8;
+    border-radius: 10px;
+    padding: 10px 18px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-weight: 500;
+    font-weight: 600;
     color: #3d5240;
 }
 
 #pantry-product-list li button {
-    background-color: #c85a5a;
+    background-color: #d9534f;
     color: #ffffff;
     border: none;
-    padding: 5px 12px;
-    border-radius: 6px;
+    padding: 6px 14px;
+    border-radius: 8px;
     font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s;
 }
 
-#pantry-product-list li button:hover {
-    background-color: #a84242;
-}
-
-.pantry-main {
+.pantry-main-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.pantry-shelf {
-    background: #ffffff;
-    padding: 20px 24px;
-    border-radius: 14px;
-    margin-bottom: 16px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    gap: 24px;
 }
 
 .pantry-shelf-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #f0f4ef;
+    border-bottom: 1px solid #f0efe6;
     padding-bottom: 8px;
 }
 
@@ -153,13 +143,11 @@
     color: #3d5240;
     margin: 0;
     font-weight: 700;
-    letter-spacing: 0.5px;
 }
 
-.pantry-shelf-title p {
-    color: #778875;
-    margin: 0;
-    font-size: 0.9rem;
+.pantry-shelf-title span {
+    color: #8fa08e;
+    font-size: 0.85rem;
 }
 
 .foods {
@@ -170,11 +158,11 @@
 }
 
 .foods p {
-    background: #f2f6f1;
-    border: 1px solid #d2ded0;
+    background: #f4f7f2;
+    border: 1px solid #d8e2d4;
     color: #3d5240;
-    padding: 6px 14px;
-    border-radius: 8px;
+    padding: 7px 16px;
+    border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
     cursor: pointer;
@@ -183,33 +171,29 @@
 }
 
 .foods p:hover {
-    background: #728862;
-    border-color: #728862;
+    background: #889f77;
+    border-color: #889f77;
     color: #ffffff;
 }
 
-.note {
-    background: #fffdf5;
-    border: 1px solid #f2e3be;
-    padding: 22px;
-    border-radius: 14px;
+.note-card {
+    background: #fffef7;
+    border: 1px solid #f5e8c7;
     height: fit-content;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
-.note h2 {
+.note-card h2 {
     color: #3d5240;
     font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 .note-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px dashed #e8d7ad;
-    padding: 10px 0;
+    border-bottom: 1px dashed #eee3c3;
+    padding: 12px 0;
 }
 
 .note-row:last-child {
@@ -225,10 +209,79 @@
 .note-row p {
     margin: 0;
     font-size: 0.85rem;
-    color: #778875;
+    color: #8fa08e;
 }
 
-.note-row .urgent {
-    color: #c85a5a;
+.badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
     font-weight: 700;
+}
+
+.badge.warn {
+    background: #fdf3d8;
+    color: #b58105;
+}
+
+.badge.urgent {
+    background: #fde8e8;
+    color: #c84040;
+}
+
+.pantry-log-card h3 {
+    color: #3d5240;
+    margin-bottom: 16px;
+}
+
+.log-table {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.log-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: #fbfcf9;
+    border: 1px solid #f0f4ee;
+    align-items: center;
+    color: #3d5240;
+    font-size: 0.95rem;
+}
+
+.log-head {
+    background: #eef3ec;
+    font-weight: 700;
+    border: none;
+}
+
+.status-pill {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.pantry-cook-btn-wrap {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cook-now-btn {
+    display: inline-block;
+    background-color: #889f77;
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.2s;
+}
+
+.cook-now-btn:hover {
+    background-color: #6d845c;
 }
