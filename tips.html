@@ -1,67 +1,51 @@
-.tips-container {
-    padding-top: 20px;
-    padding-bottom: 50px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookFromHome - Tips</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tips.css">
+</head>
+<body>
+    <header>
+        <div class="logo">CookFromHome</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="planner.html">Planner</a>
+            <a href="tips.html">Tips</a>
+            <a href="pantry.html">Pantry</a>
+            <a href="forms.html">Forms</a>
+        </nav>
+    </header>
 
-.tips-card, .tips-top-card, .substitution-card, .tip-item, .tips-box {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 24px 28px;
-    margin-bottom: 24px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    border: 1px solid #eae6d9;
-}
+    <main class="tips-container">
+        <div class="tips-top-card">
+            <h1>Kitchen Tips & Food Hacks</h1>
+            <p class="tips-subtitle">Master essential culinary skills, learn how to store ingredients properly, and discover smart substitutions.</p>
+        </div>
 
-.tips-top-card h1, .tips-container h2, h1, h2 {
-    color: #3d5240;
-    font-weight: 700;
-}
+        <div class="tips-card">
+            <h2>Smart Cooking Hacks</h2>
+            <div class="tips-search-box">
+                <label for="tipsSearch">Search cooking tips</label>
+                <input type="text" id="tipsSearch" class="tips-search-input" placeholder="Try: herbs, eggs, sugar...">
+            </div>
+            <div id="matching-tips-count" class="tips-subtitle">Matching tips: 6</div>
+        </div>
 
-.tips-search-input {
-    width: 100%;
-    max-width: 480px;
-    padding: 11px 16px;
-    border: 1px solid #889f77;
-    background-color: #ffffff;
-    border-radius: 10px;
-    color: #2d4030;
-    font-size: 0.95rem;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
+        <div class="tips-card">
+            <h3>1. Revive Wilted Herbs</h3>
+            <p>Soak limp cilantro, parsley, or lettuce in a bowl of ice water with a splash of lemon juice for 15-30 minutes to make them crisp again.</p>
+        </div>
 
-.tips-search-input:focus {
-    border-color: #d98282;
-    box-shadow: 0 0 0 3px rgba(217, 130, 130, 0.15);
-}
+        <div class="tips-card">
+            <h3>2. Fix Over-Salted Soup</h3>
+            <p>Drop a peeled raw potato or a small amount of rice into the pot. It will absorb excess salt while simmering. Remove before serving.</p>
+        </div>
+    </main>
 
-#matching-tips-count, .tips-subtitle {
-    color: #6b7c6e;
-    font-size: 0.9rem;
-    margin-top: 8px;
-}
-
-.substitution-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
-}
-
-.substitution-table th {
-    background-color: #4a5d4e;
-    color: #ffffff;
-    padding: 12px 16px;
-    text-align: left;
-    font-weight: 600;
-}
-
-.substitution-table td {
-    padding: 12px 16px;
-    border-bottom: 1px solid #f0efe6;
-    color: #3d5240;
-    font-size: 0.95rem;
-}
-
-.substitution-table tr:hover {
-    background-color: #fcfbf7;
-}
+    <script src="js/tips-dom.js"></script>
+</body>
+</html>
