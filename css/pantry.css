@@ -70,9 +70,11 @@
     background-color: #6d845c;
 }
 
+/* ИСПРАВИЛИ ЖЕЛТЫЙ ТЕКСТ НА КОНТРАСТНЫЙ ТЕМНО-ЗЕЛЕНЫЙ */
 #pantry-add-feedback {
     font-size: 0.85rem;
-    color: #556653;
+    color: #4a5d4e;
+    font-weight: 500;
     margin-top: 10px;
     margin-bottom: 0;
 }
@@ -258,11 +260,47 @@
     border: none;
 }
 
-.status-pill {
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 0.85rem;
+/* СТИЛИ ДЛЯ РАБОЧЕГО FAQ */
+.pantry-faq-card h2 {
+    color: #3d5240;
+    margin-bottom: 15px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #f0efe6;
+    padding: 10px 0;
+}
+
+.faq-question {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
     font-weight: 600;
+    font-size: 0.95rem;
+    color: #3d5240;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: #889f77;
+    font-weight: bold;
+}
+
+.faq-question.active::after {
+    content: '-';
+}
+
+.faq-answer {
+    padding: 8px 0 5px 0;
+    color: #6b7c6e;
+    font-size: 0.9rem;
 }
 
 .pantry-cook-btn-wrap {
@@ -271,7 +309,7 @@
 }
 
 .cook-now-btn {
-    display: inline-block;
+    display: int-block;
     background-color: #889f77;
     color: #ffffff;
     padding: 14px 32px;
