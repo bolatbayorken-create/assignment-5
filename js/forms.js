@@ -1,70 +1,53 @@
+$(document).ready(function() {
+    $('#contactForm').on('submit', function(e) {
+        e.preventDefault(); 
 
-// Password validation
+        let isValid = true;
 
-const password = document.getElementById("password");
-const confirmPassword = document.getElementById("confirmPassword");
-const passwordError = document.getElementById("passwordError");
+  
+        $('.error-text').remove();
+        $('.form-control').removeClass('is-invalid');
 
-function checkPasswords() {
-    if (confirmPassword.value !== "" &&
-        password.value !== confirmPassword.value) {
-
-        confirmPassword.setCustomValidity("Passwords do not match");
-        passwordError.textContent = "Passwords do not match.";
-
-    } else {
-        confirmPassword.setCustomValidity("");
-        passwordError.textContent =
-            "Password must match and contain 8+ characters.";
-    }
-}
-
-password.addEventListener("input", checkPasswords);
-confirmPassword.addEventListener("input", checkPasswords);
-
-
-// Forms validation
-
-const forms = document.querySelectorAll(".needs-validation");
-
-forms.forEach(function(form) {
-
-    const successMessage = form.querySelector(".form-success");
-
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        if (form.id === "registerForm") {
-            checkPasswords();
+    
+        const $name = $('#nameInput');
+        if ($name.val().trim() === '') {
+            $name.addClass('is-invalid');
+            $name.after('<div class="error-text text-danger small mt-1">Please enter your name.</div>');
+            isValid = false;
         }
 
-        form.classList.add("was-validated");
-
-        if (form.checkValidity()) {
-            successMessage.hidden = false;
-        } else {
-            successMessage.hidden = true;
+ 
+        const $email = $('#emailInput');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if ($email.val().trim() === '') {
+            $email.addClass('is-invalid');
+            $email.after('<div class="error-text text-danger small mt-1">Email address is required.</div>');
+            isValid = false;
+        } else if (!emailRegex.test($email.val().trim())) {
+            $email.addClass('is-invalid');
+            $email.after('<div class="error-text text-danger small mt-1">Please enter a valid email address (e.g., user@example.com).</div>');
+            isValid = false;
         }
-    });
 
-    // Hide success message when editing
-    form.addEventListener("input", function() {
-        successMessage.hidden = true;
-    });
+        const $message = $('#messageInput');
+        if ($message.val().trim().length < 10) {
+            $message.addClass('is-invalid');
+            $message.after('<div class="error-text text-danger small mt-1">Message must be at least 10 characters long.</div>');
+            isValid = false;
+        }
 
-    form.addEventListener("change", function() {
-        successMessage.hidden = true;
-    });
 
-    // Reset fields and validation
-    form.addEventListener("reset", function() {
-        form.classList.remove("was-validated");
-        successMessage.hidden = true;
+        if (isValid) {
+         
+            let $successMsg = $('#formSuccessMessage');
+            if ($successMsg.length === 0) {
+                $('#contactForm').prepend('<div id="formSuccessMessage" class="alert alert-success mb-3"></div>');
+                $successMsg = $('#formSuccessMessage');
+            }
+            $successMsg.text('Demonstration: Form validated successfully! (No backend connected, data was not actually sent).').show();
 
-        if (form.id === "registerForm") {
-            confirmPassword.setCustomValidity("");
-            passwordError.textContent =
-                "Password must match and contain 8+ characters.";
+            
+            this.reset();
         }
     });
 });
