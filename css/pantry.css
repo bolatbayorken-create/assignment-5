@@ -1,13 +1,17 @@
 .pantry {
     padding-top: 20px;
     padding-bottom: 50px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
-.pantry-top-card, 
-.pantry-added-card, 
-.pantry-shelf, 
-.note-card, 
-.pantry-log-card, 
+/* Main cards */
+.pantry-top-card,
+.pantry-added-card,
+.pantry-shelf,
+.note-card,
+.pantry-log-card,
 .pantry-faq-card {
     background: #ffffff;
     border-radius: 16px;
@@ -15,8 +19,11 @@
     margin-bottom: 24px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     border: 1px solid #eae6d9;
+    box-sizing: border-box;
+    min-width: 0;
 }
 
+/* Top card */
 .pantry-top-card h1 {
     font-size: 2.2rem;
     color: #3d5240;
@@ -30,6 +37,7 @@
     font-size: 0.95rem;
 }
 
+/* Add product */
 .pantry-add-product label {
     font-weight: 600;
     color: #3d5240;
@@ -41,10 +49,12 @@
     display: flex;
     gap: 12px;
     max-width: 480px;
+    width: 100%;
 }
 
 .add-product input {
     flex: 1;
+    min-width: 0;
     padding: 11px 16px;
     border: 1px solid #889f77;
     background-color: #ffffff;
@@ -52,6 +62,7 @@
     color: #2d4030;
     font-size: 0.95rem;
     outline: none;
+    box-sizing: border-box;
 }
 
 .add-product button {
@@ -70,7 +81,6 @@
     background-color: #6d845c;
 }
 
-/* ИСПРАВИЛИ ЖЕЛТЫЙ ТЕКСТ НА КОНТРАСТНЫЙ ТЕМНО-ЗЕЛЕНЫЙ */
 #pantry-add-feedback {
     font-size: 0.85rem;
     color: #4a5d4e;
@@ -79,6 +89,7 @@
     margin-bottom: 0;
 }
 
+/* Added products */
 .pantry-added-card h2 {
     color: #3d5240;
     margin-bottom: 4px;
@@ -100,7 +111,7 @@
 #pantry-product-list {
     list-style: none;
     padding: 0;
-    margin: 10px 0 0 0;
+    margin: 10px 0 0;
 }
 
 #pantry-product-list li {
@@ -112,6 +123,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
     font-weight: 600;
     color: #3d5240;
 }
@@ -127,16 +139,19 @@
     cursor: pointer;
 }
 
+/* Main pantry grid */
 .pantry-main-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
     gap: 24px;
 }
 
+/* Pantry shelf */
 .pantry-shelf-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
     border-bottom: 1px solid #f0efe6;
     padding-bottom: 8px;
 }
@@ -178,6 +193,7 @@
     color: #ffffff;
 }
 
+/* Expiration card */
 .note-card {
     background: #fffef7;
     border: 1px solid #f5e8c7;
@@ -194,6 +210,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
     border-bottom: 1px dashed #eee3c3;
     padding: 12px 0;
 }
@@ -219,6 +236,7 @@
     border-radius: 6px;
     font-size: 0.75rem;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .badge.warn {
@@ -231,6 +249,11 @@
     color: #c84040;
 }
 
+/* Log */
+.pantry-log-card {
+    overflow: hidden;
+}
+
 .pantry-log-card h3 {
     color: #3d5240;
     margin-bottom: 16px;
@@ -240,11 +263,13 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    width: 100%;
 }
 
 .log-row {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
     padding: 12px 16px;
     border-radius: 10px;
     background: #fbfcf9;
@@ -252,6 +277,7 @@
     align-items: center;
     color: #3d5240;
     font-size: 0.95rem;
+    box-sizing: border-box;
 }
 
 .log-head {
@@ -260,7 +286,7 @@
     border: none;
 }
 
-/* СТИЛИ ДЛЯ РАБОЧЕГО FAQ */
+/* FAQ */
 .pantry-faq-card h2 {
     color: #3d5240;
     margin-bottom: 15px;
@@ -283,33 +309,35 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
     padding: 5px 0;
 }
 
 .faq-question::after {
-    content: '+';
+    content: "+";
     font-size: 1.2rem;
     color: #889f77;
     font-weight: bold;
 }
 
 .faq-question.active::after {
-    content: '-';
+    content: "-";
 }
 
 .faq-answer {
-    padding: 8px 0 5px 0;
+    padding: 8px 0 5px;
     color: #6b7c6e;
     font-size: 0.9rem;
 }
 
+/* Cook button */
 .pantry-cook-btn-wrap {
     text-align: center;
     margin-top: 30px;
 }
 
 .cook-now-btn {
-    display: int-block;
+    display: inline-block;
     background-color: #889f77;
     color: #ffffff;
     padding: 14px 32px;
@@ -322,4 +350,123 @@
 
 .cook-now-btn:hover {
     background-color: #6d845c;
+}
+
+/* ==============================
+   TABLET
+   ============================== */
+
+@media (max-width: 768px) {
+    .pantry-main-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .pantry-top-card,
+    .pantry-added-card,
+    .pantry-shelf,
+    .note-card,
+    .pantry-log-card,
+    .pantry-faq-card {
+        padding: 20px;
+    }
+
+    .pantry-top-card h1 {
+        font-size: 1.9rem;
+    }
+}
+
+/* ==============================
+   MOBILE
+   ============================== */
+
+@media (max-width: 600px) {
+    .pantry {
+        padding-top: 14px;
+        padding-bottom: 30px;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .pantry-top-card,
+    .pantry-added-card,
+    .pantry-shelf,
+    .note-card,
+    .pantry-log-card,
+    .pantry-faq-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 18px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+    }
+
+    .pantry-top-card h1 {
+        font-size: 1.65rem;
+    }
+
+    .pantry-main-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+        width: 100%;
+    }
+
+    .add-product {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .add-product input,
+    .add-product button {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .pantry-shelf-title {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .foods {
+        gap: 8px;
+    }
+
+    .foods p {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .note-row {
+        flex-wrap: wrap;
+    }
+
+    #pantry-product-list li {
+        flex-wrap: wrap;
+    }
+
+    .log-row {
+        grid-template-columns: 1fr;
+        gap: 5px;
+        padding: 12px;
+    }
+
+    .log-head {
+        display: none;
+    }
+
+    .faq-question {
+        align-items: flex-start;
+    }
+
+    .cook-now-btn {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
 }

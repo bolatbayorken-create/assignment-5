@@ -199,11 +199,76 @@
     outline-offset: 3px;
 }
 
-/* CSS-only filtering: hide cards outside the chosen category. */
-#recipes-breakfast:checked ~ .recipes-grid .recipes-card:not([data-category="breakfast"]),
-#recipes-lunch:checked ~ .recipes-grid .recipes-card:not([data-category="lunch"]),
-#recipes-dinner:checked ~ .recipes-grid .recipes-card:not([data-category="dinner"]),
-#recipes-dessert:checked ~ .recipes-grid .recipes-card:not([data-category="dessert"]) {
+/* Filtering is handled by jQuery so search and category work together. */
+.recipes-search-controls {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 0 auto 12px;
+}
+
+.recipes-search-field {
+    flex: 1 1 280px;
+    max-width: 490px;
+}
+
+.recipes-search-field label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 7px;
+    color: var(--recipe-dark);
+}
+
+#recipes-search {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #a9b8a5;
+    border-radius: 10px;
+    background: #fff;
+    font: inherit;
+    color: var(--recipe-dark);
+}
+
+#recipes-search:focus-visible,
+.recipes-clear-button:focus-visible {
+    outline: 3px solid var(--recipe-green);
+    outline-offset: 3px;
+}
+
+.recipes-clear-button {
+    border: 1px solid var(--recipe-green);
+    border-radius: 10px;
+    padding: 12px 18px;
+    background: var(--recipe-green);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.recipes-clear-button:hover {
+    filter: brightness(0.92);
+}
+
+.recipes-results-count {
+    margin: 0 0 20px;
+    text-align: center;
+    color: var(--recipe-muted);
+}
+
+.recipes-no-results {
+    margin: 20px 0;
+    padding: 18px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #cbd8c9;
+    border-radius: 12px;
+    color: var(--recipe-dark);
+}
+
+.recipes-no-results[hidden] {
     display: none;
 }
 
