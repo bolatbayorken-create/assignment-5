@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pantry.css">
     <link rel="stylesheet" href="css/responsive.css">
-        <link rel="stylesheet" href="css/dom.css">
+    <link rel="stylesheet" href="css/dom.css">
 </head>
 
 <body>
@@ -27,183 +27,164 @@
         </div>
     </header>
 
-    <main class="pantry">
+    <main class="pantry container">
 
-        <section class="pantry-top">
-            <div class="container pantry-top-content">
-                <h1>Your Pantry</h1>
-                <div class="pantry-add-product">
-                    <label for="pantry-new-product">Add a product</label>
-                    <form id="pantry-add-form" class="add-product">
-                        <input id="pantry-new-product" name="product" type="text" placeholder="rice, milk, tomato...">
-                        <button type="submit">ADD</button>
-                    </form>
-                    <p id="pantry-add-feedback" role="status" aria-live="polite">Demo list — products are not stored after a refresh.</p>
-                </div>
+        <section class="pantry-top-card">
+            <h1>My Home Pantry & Fridge 🧺</h1>
+            <p class="subtitle">Track ingredients you currently have at home before cooking</p>
+            
+            <div class="pantry-add-product">
+                <label for="pantry-new-product">Quick Add Ingredient</label>
+                <form id="pantry-add-form" class="add-product">
+                    <input id="pantry-new-product" name="product" type="text" placeholder="e.g. Milk, Eggs, Tomatoes...">
+                    <button type="submit">+ Add to Pantry</button>
+                </form>
+                <p id="pantry-add-feedback">💡 <span>Products are updated dynamically in your session list below.</span></p>
             </div>
         </section>
 
-        <section class="container pantry-added" aria-labelledby="pantry-added-title">
-            <h2 id="pantry-added-title">My products</h2>
-            <p>Added products: <span id="pantry-item-count">0</span></p>
-            <p id="pantry-empty-list">No products added yet.</p>
-            <ul id="pantry-product-list" aria-label="Added products"></ul>
+        <section class="pantry-added-card">
+            <h2>Items Currently in Stock 📦</h2>
+            <p class="count-text">Total tracked items: <span id="pantry-item-count">0</span></p>
+            <p id="pantry-empty-list">Your pantry is empty. Add items above or click categories below!</p>
+            <ul id="pantry-product-list"></ul>
         </section>
 
-        <section class="container pantry-main">
+        <section class="pantry-main-grid">
             <div class="shelves">
                 <article class="pantry-shelf">
-
                     <div class="pantry-shelf-title">
-                        <h4>PROTEIN</h4>
-                        <p>6 items</p>
+                        <h4>PROTEIN 🥩</h4>
+                        <span>6 items</span>
                     </div>
-
                     <div class="foods">
-                        <p>Chicken</p>
-                        <p>Eggs</p>
-                        <p>Beans</p>
+                        <p>Chicken 🍗</p>
+                        <p>Eggs 🥚</p>
+                        <p>Beans 🫘</p>
                     </div>
                 </article>
 
                 <article class="pantry-shelf">
                     <div class="pantry-shelf-title">
-                        <h4>GRAINS</h4>
-                        <p>8 items</p>
+                        <h4>GRAINS 🌾</h4>
+                        <span>8 items</span>
                     </div>
-
                     <div class="foods">
-                        <p>Rice</p>
-                        <p>Pasta</p>
-                        <p>Bread</p>
+                        <p>Rice 🍚</p>
+                        <p>Pasta 🍝</p>
+                        <p>Bread 🍞</p>
                     </div>
                 </article>
 
                 <article class="pantry-shelf">
                     <div class="pantry-shelf-title">
-                        <h4>VEGETABLES</h4>
-                        <p>7 items</p>
+                        <h4>VEGETABLES 🥦</h4>
+                        <span>7 items</span>
                     </div>
-
                     <div class="foods">
-                        <p>Tomatoes</p>
-                        <p>Onions</p>
-                        <p>Carrots</p>
+                        <p>Tomatoes 🍅</p>
+                        <p>Onions 🧅</p>
+                        <p>Carrots 🥕</p>
                     </div>
                 </article>
-
 
                 <article class="pantry-shelf">
                     <div class="pantry-shelf-title">
-                        <h4>DAIRY</h4>
-                        <p>5 items</p>
+                        <h4>DAIRY 🥛</h4>
+                        <span>5 items</span>
                     </div>
-
                     <div class="foods">
-                        <p>Milk</p>
-                        <p>Cheese</p>
-                        <p>Yogurt</p>
+                        <p>Milk 🥛</p>
+                        <p>Cheese 🧀</p>
+                        <p>Yogurt 🍦</p>
                     </div>
                 </article>
-
             </div>
 
-            <aside class="note">
-
-                <h2>Before it goes bad</h2>
+            <aside class="note-card">
+                <h2>Before It Expires ⏳</h2>
                 <div class="note-row">
                     <div>
-                        <h4>Tomatoes</h4>
+                        <h4>Tomatoes 🍅</h4>
                         <p>4 pieces</p>
                     </div>
-                    <p>2 DAYS</p>
+                    <span class="badge warn">2 DAYS</span>
                 </div>
 
                 <div class="note-row">
                     <div>
-                        <h4>Milk</h4>
+                        <h4>Milk 🥛</h4>
                         <p>500 ml</p>
                     </div>
-                    <p>3 DAYS</p>
+                    <span class="badge warn">3 DAYS</span>
                 </div>
 
                 <div class="note-row">
                     <div>
-                        <h4>Chicken fillet</h4>
+                        <h4>Chicken Fillet 🍗</h4>
                         <p>500 g</p>
                     </div>
-
-                    <p class="urgent">1 DAY</p>
+                    <span class="badge urgent">1 DAY</span>
                 </div>
-
             </aside>
         </section>
 
-        <section class="container pantry-log">
-
-            <div class="log">
-                <div class="pantry-log-row log-head">
-                    <p>Product</p>
-                    <p>Amount</p>
-                    <p>Status</p>
+        <section class="pantry-log-card">
+            <h3>Inventory Status Log 📋</h3>
+            <div class="log-table">
+                <div class="log-row log-head">
+                    <div>Product</div>
+                    <div>Amount</div>
+                    <div>Status</div>
                 </div>
-
-                <div class="pantry-log-row">
-                    <h4>Eggs</h4>
-                    <p>6 pieces</p>
-                    <p class="status fresh">Fresh</p>
+                <div class="log-row">
+                    <div>Eggs 🥚</div>
+                    <div>6 pieces</div>
+                    <div><span class="status-pill fresh">🟢 Fresh</span></div>
                 </div>
-
-                <div class="pantry-log-row">
-                    <h4>Tomatoes</h4>
-                    <p>4 pieces</p>
-                    <p class="status soon">Use soon</p>
+                <div class="log-row">
+                    <div>Tomatoes 🍅</div>
+                    <div>4 pieces</div>
+                    <div><span class="status-pill soon">🟡 Use soon</span></div>
                 </div>
-
-                <div class="pantry-log-row">
-                    <h4>Rice</h4>
-                    <p>1 kg</p>
-                    <p class="status stock">In stock</p>
-                </div>
-
-            </div>
-
-        </section>
-
-        <section class="container pantry-faq" aria-labelledby="pantry-faq-title">
-            <h2 id="pantry-faq-title">FAQ</h2>
-            <div class="faq-item">
-                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">How do I update product expiration dates?</button>
-                <div class="faq-answer" id="faq-answer-1" hidden>
-                    <p>Expiration dates updates automatically</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">Can I generate recipes directly from my pantry?</button>
-                <div class="faq-answer" id="faq-answer-2" hidden>
-                    <p>click "Now cook >"</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">Cow?</button>
-                <div class="faq-answer" id="faq-answer-3" hidden>
-                    <img src="https://media.tenor.com/FY-Gu9lp8lUAAAAi/dancing-polish.gif">
+                <div class="log-row">
+                    <div>Rice 🍚</div>
+                    <div>1 kg</div>
+                    <div><span class="status-pill stock">🔵 In stock</span></div>
                 </div>
             </div>
         </section>
 
-        <section class="container pantry-bottom">
-            <a href="recipes.html">Now cook ></a>
+        <section class="pantry-faq-card">
+            <h2>Frequently Asked Questions ❓</h2>
+            <div class="faq-item">
+                <button type="button" class="faq-question">How do I update product expiration dates?</button>
+                <div class="faq-answer" hidden>
+                    <p>Expiration dates update automatically based on item categories and stock logs.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-question">Can I generate recipes directly from my pantry?</button>
+                <div class="faq-answer" hidden>
+                    <p>Yes! Click "Now cook >" below to filter recipes by available ingredients.</p>
+                </div>
+            </div>
         </section>
+
+        <div class="pantry-cook-btn-wrap">
+            <a href="recipes.html" class="cook-now-btn">Now Cook With Pantry Items 🍳 &gt;</a>
+        </div>
+
     </main>
 
     <footer>
         <div class="container footer-content">
             <h2>CookFromHome</h2>
-            <p> Cook by yourself :3</p>
+            <p>Cook by yourself :3</p>
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/pantry-dom.js" defer></script>
 
 </body>

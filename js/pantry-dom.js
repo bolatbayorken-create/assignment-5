@@ -1,57 +1,63 @@
+$(document).ready(function() {
+    const $form = $('#pantry-add-form');
+    const $input = $('#pantry-new-product');
+    const $list = $('#pantry-product-list');
+    const $counter = $('#pantry-item-count');
+    const $emptyMsg = $('#pantry-empty-list');
 
-const faqButtons = document.querySelectorAll(".faq-question");
-faqButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-        const answer = document.getElementById(button.getAttribute("aria-controls"));
-        answer.hidden = !answer.hidden;
-        button.setAttribute("aria-expanded", String(!answer.hidden));
-    });
-});
-
-const addForm = document.getElementById("pantry-add-form");
-const productInput = document.getElementById("pantry-new-product");
-const productList = document.getElementById("pantry-product-list");
-const productCount = document.getElementById("pantry-item-count");
-const emptyListMessage = document.getElementById("pantry-empty-list");
-const addFeedback = document.getElementById("pantry-add-feedback");
-
-function updateProductCount() {
-    const count = productList.children.length;
-    productCount.textContent = count;
-    emptyListMessage.hidden = count > 0;
-}
-
-addForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    const name = productInput.value.trim();
-
-    if (!name) {
-        addFeedback.textContent = "Please enter a product name.";
-        productInput.focus();
-        return;
+    function updateState() {
+        const count = $list.children('li').length;
+        $counter.text(count);
+        
+        if (count === 0) {
+            $emptyMsg.show();
+        } else {
+            $emptyMsg.hide();
+        }
     }
 
-    const item = document.createElement("li");
-    const productName = document.createElement("span");
-    const removeButton = document.createElement("button");
+    function addProduct(name) {
+        const productName = name.trim();
+        if (productName === "") return;
 
-    productName.textContent = name;
-    removeButton.type = "button";
-    removeButton.textContent = "Remove";
-    removeButton.setAttribute("aria-label", "Remove " + name);
+        const $li = $('<li>');
+        const $span = $('<span>').text(productName);
+        const $delBtn = $('<button>').text('Remove');
 
-    removeButton.addEventListener("click", function () {
-        item.remove();
-        updateProductCount();
-        addFeedback.textContent = "Removed " + name + ".";
+        $li.append($span).append($delBtn);
+        $list.append($li);
+        updateState();
+    }
+
+    $form.on('submit', function(e) {
+        e.preventDefault();
+        const value = $input.val();
+        
+        if (value.trim() === "") {
+            alert("Please enter a product name!");
+            return;
+        }
+
+        addProduct(value);
+        $input.val('');
     });
 
-    item.append(productName, removeButton);
-    productList.append(item);
-    productInput.value = "";
-    addFeedback.textContent = "Added " + name + ".";
-    updateProductCount();
-    productInput.focus();
-});
+    $('.pantry-shelf .foods p').on('click', function() {
+        const categoryProduct = $(this).text();
+        addProduct(categoryProduct);
+    });
 
-updateProductCount();
+    $list.on('click', 'button', function() {
+        $(this).closest('li').remove();
+        updateState();
+    });
+
+    // Оживляем FAQ (аккордеон) для Оркена
+    $('.faq-question').on('click', function() {
+        const $answer = $(this).next('.faq-answer');
+        $answer.slideToggle(200);
+        $(this).toggleClass('active');
+    });
+
+    updateState();
+});
