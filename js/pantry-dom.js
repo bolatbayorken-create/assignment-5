@@ -16,32 +16,41 @@ $(document).ready(function() {
         }
     }
 
+    function addProduct(name) {
+        const productName = name.trim();
+        if (productName === "") return;
 
-    updateState();
+        const $li = $('<li>');
+        const $span = $('<span>').text(productName);
+        const $delBtn = $('<button>').text('Remove');
+
+        $li.append($span).append($delBtn);
+        $list.append($li);
+        updateState();
+    }
 
     $form.on('submit', function(e) {
         e.preventDefault();
+        const value = $input.val();
         
-        const productName = $input.val().trim();
-        
-        if (productName === "") {
+        if (value.trim() === "") {
             alert("Please enter a product name!");
             return;
         }
 
-        const $li = $('<li>').addClass('list-group-item d-flex justify-content-between align-items-center mb-2 p-2 border rounded');
-        const $span = $('<span>').text(productName);
-        const $delBtn = $('<button>').addClass('btn btn-danger btn-sm').text('Remove');
-
-        $li.append($span).append($delBtn);
-        $list.append($li);
-
+        addProduct(value);
         $input.val('');
-        updateState();
+    });
+
+    $('.pantry-shelf .foods p').on('click', function() {
+        const categoryProduct = $(this).text();
+        addProduct(categoryProduct);
     });
 
     $list.on('click', 'button', function() {
         $(this).closest('li').remove();
         updateState();
     });
+
+    updateState();
 });
