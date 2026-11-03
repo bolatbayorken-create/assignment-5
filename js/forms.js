@@ -1,70 +1,61 @@
+$(document).ready(function() {
+    $('#contactForm').on('submit', function(e) {
+        e.preventDefault();
+        
+        let isValid = true;
+        
 
-// Password validation
+        let name = $('#nameInput').val().trim();
+        let email = $('#emailInput').val().trim();
+        let message = $('#messageInput').val().trim();
+        
 
-const password = document.getElementById("password");
-const confirmPassword = document.getElementById("confirmPassword");
-const passwordError = document.getElementById("passwordError");
-
-function checkPasswords() {
-    if (confirmPassword.value !== "" &&
-        password.value !== confirmPassword.value) {
-
-        confirmPassword.setCustomValidity("Passwords do not match");
-        passwordError.textContent = "Passwords do not match.";
-
-    } else {
-        confirmPassword.setCustomValidity("");
-        passwordError.textContent =
-            "Password must match and contain 8+ characters.";
-    }
-}
-
-password.addEventListener("input", checkPasswords);
-confirmPassword.addEventListener("input", checkPasswords);
-
-
-// Forms validation
-
-const forms = document.querySelectorAll(".needs-validation");
-
-forms.forEach(function(form) {
-
-    const successMessage = form.querySelector(".form-success");
-
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        if (form.id === "registerForm") {
-            checkPasswords();
-        }
-
-        form.classList.add("was-validated");
-
-        if (form.checkValidity()) {
-            successMessage.hidden = false;
+        let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+     
+        if (name === "") {
+            $('#nameInput').addClass('is-invalid border-danger');
+            $('#nameError').show();
+            isValid = false;
         } else {
-            successMessage.hidden = true;
+            $('#nameInput').removeClass('is-invalid border-danger').addClass('is-valid border-success');
+            $('#nameError').hide();
         }
-    });
+        
 
-    // Hide success message when editing
-    form.addEventListener("input", function() {
-        successMessage.hidden = true;
-    });
+        if (email === "" || !emailRegex.test(email)) {
+            $('#emailInput').addClass('is-invalid border-danger');
+            $('#emailError').show();
+            isValid = false;
+        } else {
+            $('#emailInput').removeClass('is-invalid border-danger').addClass('is-valid border-success');
+            $('#emailError').hide();
+        }
+        
 
-    form.addEventListener("change", function() {
-        successMessage.hidden = true;
-    });
-
-    // Reset fields and validation
-    form.addEventListener("reset", function() {
-        form.classList.remove("was-validated");
-        successMessage.hidden = true;
-
-        if (form.id === "registerForm") {
-            confirmPassword.setCustomValidity("");
-            passwordError.textContent =
-                "Password must match and contain 8+ characters.";
+        if (message.length < 10 || message.length > 500) {
+            $('#messageInput').addClass('is-invalid border-danger');
+            $('#messageError').show();
+            isValid = false;
+        } else {
+            $('#messageInput').removeClass('is-invalid border-danger').addClass('is-valid border-success');
+            $('#messageError').hide();
+        }
+        
+  
+        if (isValid) {
+            $('#formSuccess')
+                .text('Demonstration: Form validated successfully! (Frontend simulation)')
+                .fadeIn();
+            
+   
+            setTimeout(function() {
+                $('#contactForm')[0].reset();
+                $('.form-control').removeClass('is-valid border-success');
+                $('#formSuccess').fadeOut();
+            }, 3000);
+        } else {
+            $('#formSuccess').hide();
         }
     });
 });
