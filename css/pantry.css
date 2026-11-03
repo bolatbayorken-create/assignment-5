@@ -54,7 +54,6 @@ body {
     padding: 0 20px;
 }
 
-
 .card, .pantry-top-card, .pantry-added-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -62,6 +61,17 @@ body {
     padding: 24px;
     margin-bottom: 24px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+}
+
+.pantry-categories, .categories-grid, .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.category-column, .col-md-4, .col-md-6 {
+    flex: 1;
+    min-width: 280px;
 }
 
 
@@ -76,9 +86,7 @@ body {
 
 #addPantryBtn:hover {
     background-color: #2e4e36 !important;
-    border-color: #2e4e36 !important;
 }
-
 
 @media (max-width: 768px) {
     body {
