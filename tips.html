@@ -79,7 +79,7 @@
             <div id="noResults" class="alert alert-warning text-center mt-3" style="display: none;">No matching tips found. Try another search term!</div>
         </section>
 
-        <section class="substitutions-card card p-4">
+        <section class="substitutions-card card p-4 mb-5">
             <h3 class="h4 text-success mb-3 text-center">Emergency Ingredient Substitutions 🔄</h3>
             <p class="text-center text-muted mb-4">Out of a key ingredient? Use these tested kitchen swaps in a pinch.</p>
             <div class="table-responsive">
@@ -120,6 +120,35 @@
                     </tbody>
                 </table>
             </div>
+        </section>
+
+       
+        <section class="card shadow-sm p-4 mb-5">
+            <h3 class="h4 mb-3 text-success">Get Weekly Kitchen Tips</h3>
+            <p class="text-muted mb-4">Subscribe with your details to receive our best culinary hacks directly in your inbox.</p>
+            
+            <form id="tipsContactForm" novalidate>
+                <div class="mb-3">
+                    <label for="tipNameInput" class="form-label font-weight-bold">Your Name</label>
+                    <input type="text" id="tipNameInput" class="form-control" placeholder="Enter your name">
+                    <div class="invalid-feedback text-danger small mt-1" id="tipNameError" style="display: none;">Please enter your name.</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="tipEmailInput" class="form-label font-weight-bold">Email Address</label>
+                    <input type="email" id="tipEmailInput" class="form-control" placeholder="example@domain.com">
+                    <div class="invalid-feedback text-danger small mt-1" id="tipEmailError" style="display: none;">Please enter a valid email address.</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="tipMessageInput" class="form-label font-weight-bold">Your Question or Topic</label>
+                    <textarea id="tipMessageInput" class="form-control" rows="3" placeholder="What tips would you like to see?"></textarea>
+                    <div class="invalid-feedback text-danger small mt-1" id="tipMessageError" style="display: none;">Message must be between 10 and 500 characters.</div>
+                </div>
+                
+                <button type="submit" id="tipSubmitBtn" class="btn btn-success w-100 py-2 fw-bold">Submit Subscription</button>
+                <div id="tipFormSuccess" class="alert alert-success mt-3" style="display: none;"></div>
+            </form>
         </section>
     </main>
 
