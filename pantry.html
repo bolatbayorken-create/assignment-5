@@ -37,10 +37,12 @@
             
             <div class="pantry-add-product">
                 <label for="pantry-new-product">Quick Add Ingredient</label>
-                <form id="pantry-add-form" class="add-product">
-                    <input id="pantry-new-product" name="product" type="text" placeholder="e.g. Milk, Eggs, Tomatoes...">
-                    <button type="submit">+ Add to Pantry</button>
-                </form>
+              <form id="pantryForm" class="mb-3">
+        <div class="input-group">
+            <input type="text" id="pantryInput" class="form-control" placeholder="e.g. Milk, Eggs, Tomatoes...">
+            <button type="submit" id="addPantryBtn" class="btn btn-pantry-add">+ Add to Pantry</button>
+        </div>
+    </form>
                 <p id="pantry-add-feedback">💡 <span>Products are updated dynamically in your session list below.</span></p>
             </div>
         </section>
