@@ -1,22 +1,28 @@
-const tipsSearch = document.getElementById("tips-search");
-const tipCards = document.querySelectorAll(".tip-card");
-const tipsResultCount = document.getElementById("tips-result-count");
-const tipsNoResults = document.getElementById("tips-no-results");
+$(document).ready(function() {
+    $('#searchInput').on('input', function() {
+        const searchText = $(this).val().toLowerCase().trim();
+        let visibleCount = 0;
 
-function filterTips() {
-    const searchText = tipsSearch.value.trim().toLowerCase();
-    let matches = 0;
+        $('.filter-item').each(function() {
+            const $item = $(this);
+            const text = $item.text().toLowerCase();
 
-    tipCards.forEach(function (card) {
-        const title = card.querySelector("h3").textContent.toLowerCase();
-        const matchesSearch = title.includes(searchText);
-        card.hidden = !matchesSearch;
-        if (matchesSearch) matches++;
+            if (text.includes(searchText)) {
+                $item.show();
+                visibleCount++;
+            } else {
+                $item.hide();
+            }
+        });
+
+        // Обновляем счетчик совпадений
+        $('#matchCount').text(`Matching tips: ${visibleCount}`);
+
+        // Показываем или скрываем сообщение о том, что ничего не найдено
+        if (visibleCount === 0) {
+            $('#noResultsMessage').show();
+        } else {
+            $('#noResultsMessage').hide();
+        }
     });
-
-    tipsResultCount.textContent = "Matching tips: " + matches;
-    tipsNoResults.hidden = matches !== 0;
-}
-
-tipsSearch.addEventListener("input", filterTips);
-filterTips();
+});
