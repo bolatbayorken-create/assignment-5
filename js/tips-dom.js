@@ -1,28 +1,26 @@
 $(document).ready(function() {
-    $('#searchInput').on('input', function() {
-        const searchText = $(this).val().toLowerCase().trim();
+    $('#tipSearch').on('keyup input', function() {
+        let query = $(this).val().toLowerCase().trim();
         let visibleCount = 0;
 
-        $('.filter-item').each(function() {
-            const $item = $(this);
-            const text = $item.text().toLowerCase();
+        $('.tip-item').each(function() {
+            let keywords = $(this).attr('data-keywords').toLowerCase();
+            let text = $(this).text().toLowerCase();
 
-            if (text.includes(searchText)) {
-                $item.show();
+            if (keywords.includes(query) || text.includes(query)) {
+                $(this).fadeIn(200);
                 visibleCount++;
             } else {
-                $item.hide();
+                $(this).fadeOut(200);
             }
         });
 
-        // Обновляем счетчик совпадений
-        $('#matchCount').text(`Matching tips: ${visibleCount}`);
+        $('#tipCount').text(visibleCount);
 
-        // Показываем или скрываем сообщение о том, что ничего не найдено
         if (visibleCount === 0) {
-            $('#noResultsMessage').show();
+            $('#noResults').fadeIn(200);
         } else {
-            $('#noResultsMessage').hide();
+            $('#noResults').fadeOut(200);
         }
     });
 });
