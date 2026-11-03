@@ -37,7 +37,7 @@ $(document).ready(function() {
         
         let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         
-        // Проверка Name
+       
         if (name === "") {
             $('#tipNameInput').addClass('is-invalid');
             $('#tipNameError').show();
