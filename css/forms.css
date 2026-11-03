@@ -104,9 +104,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    body {
-        padding-top: 60px;
-    }
     .nav-container {
         flex-direction: column;
         padding: 8px 10px;
