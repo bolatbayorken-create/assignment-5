@@ -24,12 +24,14 @@
     </header>
 
     <main class="container main-content">
+   
         <section class="forms-hero text-center mb-4">
             <div class="hero-badge">Get in Touch 📬</div>
             <h2>Contact & Registration</h2>
-            <p class="text-muted">We would love to hear from you! Send us a message or register your account.</p>
+            <p>We would love to hear from you! Send us a message or register your account.</p>
         </section>
 
+        <!-- Карточка формы с валидацией (Task 5) -->
         <section class="card shadow-sm p-4 mb-5">
             <h3 class="h4 mb-4 text-success">Contact Us ✉️</h3>
             <form id="contactForm" novalidate>
@@ -37,21 +39,26 @@
                     <div class="col-md-6 mb-3">
                         <label for="nameInput" class="form-label font-weight-bold">Name</label>
                         <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
+                        <div class="invalid-feedback text-danger small mt-1" id="nameError" style="display: none;">Please enter your name.</div>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="emailInput" class="form-label font-weight-bold">Email</label>
                         <input type="email" id="emailInput" class="form-control" placeholder="user@example.com">
+                        <div class="invalid-feedback text-danger small mt-1" id="emailError" style="display: none;">Please enter a valid email address.</div>
                     </div>
                 </div>
                 <div class="mb-3">
                     <label for="messageInput" class="form-label font-weight-bold">Message</label>
                     <textarea id="messageInput" class="form-control" rows="4" placeholder="Write your message here..."></textarea>
                     <div class="form-text">Message must be 10–500 characters.</div>
+                    <div class="invalid-feedback text-danger small mt-1" id="messageError" style="display: none;">Message must be between 10 and 500 characters.</div>
                 </div>
-                <button type="submit" class="btn btn-success px-4 py-2">Send Message</button>
+                <button type="submit" id="submitBtn" class="btn btn-success px-4 py-2">Send Message</button>
+                <div id="formSuccess" class="alert alert-success mt-3" style="display: none;"></div>
             </form>
         </section>
     </main>
+
 
     <footer class="site-footer bg-dark text-white text-center py-4 mt-5">
         <div class="container">
