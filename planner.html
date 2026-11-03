@@ -6,280 +6,28 @@
     <title>CookFromHome - Planner</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/site-polish.css">
-    <style>
-      :root {
-        --brand-sage: #88a070;
-        --brand-sage-dark: #6e8557;
-        --cozy-pink-bg: #fde8f0;
-        --cozy-pink-border: #f2a8c0;
-        --cozy-pink-badge: #f9d2e1;
-        --cozy-pink-text: #8a3b5a;
-        --bg-light: #f4f7f2;
-        --card-bg: #ffffff;
-        --text-dark: #333d29;
-        --border-color: #e2e8f0;
-      }
-
-      .planner-wrapper {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: var(--text-dark);
-        max-width: 1100px;
-        margin: 20px auto;
-        padding: 10px;
-      }
-
-      .planner-header-box {
-        text-align: center;
-        background: var(--cozy-pink-bg);
-        padding: 24px;
-        border-radius: 16px;
-        border: 2px dashed var(--cozy-pink-border);
-        margin-bottom: 24px;
-      }
-
-      .planner-header-box h2 {
-        color: var(--brand-sage-dark);
-        margin: 0 0 8px 0;
-        font-size: 28px;
-      }
-
-      .planner-header-box p {
-        margin: 0;
-        color: #666;
-        font-size: 15px;
-      }
-
-      .planner-grid-layout {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 20px;
-      }
-
-      @media (max-width: 768px) {
-        .planner-grid-layout {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .day-node {
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
-        border-left: 5px solid var(--brand-sage);
-        border-radius: 14px;
-        padding: 18px;
-        margin-bottom: 16px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-        transition: transform 0.2s ease;
-      }
-
-      .day-node:hover {
-        transform: translateY(-2px);
-      }
-
-      .day-node-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: bold;
-        font-size: 18px;
-        color: var(--brand-sage-dark);
-        border-bottom: 1px dashed var(--border-color);
-        padding-bottom: 8px;
-        margin-bottom: 12px;
-      }
-
-      .badge-kcal {
-        font-size: 13px;
-        background: var(--cozy-pink-badge);
-        color: var(--cozy-pink-text);
-        padding: 4px 12px;
-        border-radius: 15px;
-        font-weight: 600;
-      }
-
-      .meal-item-list {
-        list-style: none;
-        padding-left: 0;
-        margin: 0;
-      }
-
-      .meal-item-list li {
-        padding: 6px 0;
-        font-size: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-        transition: opacity 0.2s;
-      }
-
-      .meal-item-list li.eaten {
-        text-decoration: line-through;
-        opacity: 0.5;
-      }
-
-      .meal-left {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      .meal-tag {
-        font-weight: 600;
-        color: var(--brand-sage-dark);
-        min-width: 85px;
-      }
-
-      .meal-cal {
-        font-size: 13px;
-        color: #888;
-        font-weight: 500;
-      }
-
-      .sidebar-card {
-        background: var(--card-bg);
-        border: 1px solid var(--border-color);
-        border-radius: 14px;
-        padding: 20px;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-      }
-
-      .sidebar-card h3 {
-        margin-top: 0;
-        color: var(--brand-sage-dark);
-        font-size: 18px;
-        border-bottom: 2px solid var(--bg-light);
-        padding-bottom: 8px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .progress-text {
-        font-size: 12px;
-        font-weight: normal;
-        color: #888;
-      }
-
-      .form-field {
-        margin-bottom: 14px;
-      }
-
-      .form-field label {
-        display: block;
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 6px;
-      }
-
-      .form-field select, 
-      .form-field input {
-        width: 100%;
-        padding: 9px 12px;
-        border: 1px solid #cbd5e1;
-        border-radius: 8px;
-        box-sizing: border-box;
-        font-family: inherit;
-      }
-
-      .btn-action {
-        width: 100%;
-        background-color: var(--brand-sage);
-        color: #ffffff;
-        border: none;
-        padding: 10px;
-        border-radius: 8px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.2s;
-      }
-
-      .btn-action:hover {
-        background-color: var(--brand-sage-dark);
-      }
-
-      .add-item-box {
-        display: flex;
-        gap: 8px;
-        margin-bottom: 14px;
-      }
-
-      .add-item-box input {
-        flex: 1;
-        padding: 8px 12px;
-        border: 1px solid #cbd5e1;
-        border-radius: 8px;
-        font-size: 14px;
-      }
-
-      .btn-add {
-        background-color: var(--brand-sage);
-        color: white;
-        border: none;
-        padding: 8px 14px;
-        border-radius: 8px;
-        font-weight: 600;
-        cursor: pointer;
-      }
-
-      .checklist-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        padding: 8px 0;
-        border-bottom: 1px solid #f8fafc;
-      }
-
-      .checklist-left {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .checklist-row input[type="checkbox"] {
-        accent-color: var(--brand-sage);
-        width: 16px;
-        height: 16px;
-        cursor: pointer;
-      }
-
-      .checklist-row.completed label {
-        text-decoration: line-through;
-        color: #94a3b8;
-      }
-
-      .btn-delete-item {
-        background: none;
-        border: none;
-        color: #cbd5e1;
-        font-size: 16px;
-        cursor: pointer;
-        padding: 0 4px;
-      }
-
-      .btn-delete-item:hover {
-        color: #ef4444;
-      }
-    </style>
+    <link rel="stylesheet" href="css/planner.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/site-layout.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
     <!-- HEADER -->
-    <header>
-        <div class="container header-content">
-            <a href="index.html" class="logo"> CookFromHome </a>
-            <nav>
-                 <a href="index.html">Home</a>
-                 <a href="recipes.html">Recipes</a>
-                 <a href="planner.html">Planner</a>
-                 <a href="tips.html">Tips</a>
-                 <a href="pantry.html">Pantry</a>
-                 <a href="forms.html">Forms</a>
-            </nav>
-        </div>
-    </header>
+    <header class="site-topbar">
+    <div class="container header-content">
+        <a href="index.html" class="logo">CookFromHome</a>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="planner.html" aria-current="page">Planner</a>
+            <a href="tips.html">Tips</a>
+            <a href="pantry.html">Pantry</a>
+            <a href="forms.html">Forms</a>
+        </nav>
+        <button id="theme-button" class="theme-toggle" type="button"
+                aria-pressed="false" aria-label="Switch to dark theme">Dark theme</button>
+    </div>
+</header>
 
     <!-- MAIN CONTENT -->
     <main class="planner-wrapper" id="main-content">
@@ -309,7 +57,7 @@
               <input type="number" id="targetCalories" value="2000" step="50">
             </div>
 
-            <button type="button" class="btn-action" onclick="updatePlan()">Update Plan</button>
+            <button type="button" class="btn-action">Update Plan</button>
           </div>
 
           <div class="sidebar-card">
@@ -319,33 +67,33 @@
             </h3>
             
             <div class="add-item-box">
-              <input type="text" id="customInput" placeholder="Add an item...">
-              <button type="button" class="btn-add" onclick="addNewProduct()">+ Add</button>
+              <input type="text" id="customInput" aria-label="New grocery item" placeholder="Add an item...">
+              <button type="button" class="btn-add">+ Add</button>
             </div>
 
             <div id="checklistGroup">
               <div class="checklist-row">
                 <div class="checklist-left">
-                  <input type="checkbox" id="item1" onchange="toggleItem(this)">
+                  <input type="checkbox" id="item1">
                   <label for="item1">Cottage cheese (400g)</label>
                 </div>
-                <button class="btn-delete-item" onclick="deleteItem(this)">×</button>
+                <button type="button" class="btn-delete-item" aria-label="Remove grocery item">×</button>
               </div>
 
               <div class="checklist-row">
                 <div class="checklist-left">
-                  <input type="checkbox" id="item2" onchange="toggleItem(this)">
+                  <input type="checkbox" id="item2">
                   <label for="item2">Chicken breast (1 kg)</label>
                 </div>
-                <button class="btn-delete-item" onclick="deleteItem(this)">×</button>
+                <button type="button" class="btn-delete-item" aria-label="Remove grocery item">×</button>
               </div>
 
               <div class="checklist-row">
                 <div class="checklist-left">
-                  <input type="checkbox" id="item3" onchange="toggleItem(this)">
+                  <input type="checkbox" id="item3">
                   <label for="item3">Fresh greens & avocado</label>
                 </div>
-                <button class="btn-delete-item" onclick="deleteItem(this)">×</button>
+                <button type="button" class="btn-delete-item" aria-label="Remove grocery item">×</button>
               </div>
             </div>
           </div>
@@ -354,186 +102,16 @@
     </main>
 
     <!-- FOOTER -->
-    <footer>
-        <div class="container footer-content">
-            <h2>CookFromHome</h2>
-            <p>Cook by yourself :3</p>
-        </div>
-    </footer>
+    <footer class="site-footer">
+    <div class="container footer-content">
+        <h2>CookFromHome</h2>
+        <p>Cook by yourself :3</p>
+    </div>
+</footer>
 
     <!-- JAVASCRIPT -->
-    <script>
-      // Базовая структура блюд с их базовыми калориями (при целевых 2000 kcal)
-      const defaultSchedule = [
-        { 
-          day: "Monday 🥐", 
-          meals: [
-            { tag: "Breakfast", name: "Cottage cheese pancakes with berry jam 🥞", kcal: 450 },
-            { tag: "Lunch", name: "Chicken noodle soup 🍜", kcal: 650 },
-            { tag: "Dinner", name: "Teriyaki chicken with rice 🥣", kcal: 900 }
-          ]
-        },
-        { 
-          day: "Tuesday 🍳", 
-          meals: [
-            { tag: "Breakfast", name: "Avocado toast with poached egg 🥑", kcal: 420 },
-            { tag: "Lunch", name: "Beef pilaf 🍲", kcal: 780 },
-            { tag: "Dinner", name: "Baked potatoes with herbs 🥔", kcal: 800 }
-          ]
-        },
-        { 
-          day: "Wednesday 🥣", 
-          meals: [
-            { tag: "Breakfast", name: "Oatmeal with banana and honey 🍌", kcal: 400 },
-            { tag: "Lunch", name: "Homemade pastry & tea 🥐", kcal: 700 },
-            { tag: "Dinner", name: "Spaghetti Bolognese 🍝", kcal: 900 }
-          ]
-        },
-        { 
-          day: "Thursday 🧇", 
-          meals: [
-            { tag: "Breakfast", name: "Scrambled eggs with toast 🍳", kcal: 430 },
-            { tag: "Lunch", name: "Borscht with sour cream 🍲", kcal: 670 },
-            { tag: "Dinner", name: "Stuffed bell peppers 🫑", kcal: 900 }
-          ]
-        },
-        { 
-          day: "Friday 🍕", 
-          meals: [
-            { tag: "Breakfast", name: "Berry pancakes 🥞", kcal: 480 },
-            { tag: "Lunch", name: "Chicken and rice bowl 🥣", kcal: 720 },
-            { tag: "Dinner", name: "Baked salmon with sauce 🐟", kcal: 800 }
-          ]
-        },
-        { 
-          day: "Saturday ☕", 
-          meals: [
-            { tag: "Breakfast", name: "Eggs & sausages breakfast 🍳", kcal: 520 },
-            { tag: "Lunch", name: "Lentil soup with bread 🍞", kcal: 680 },
-            { tag: "Dinner", name: "Homemade pizza 🍕", kcal: 800 }
-          ]
-        },
-        { 
-          day: "Sunday 🍰", 
-          meals: [
-            { tag: "Breakfast", name: "Cottage cheese casserole 🥧", kcal: 440 },
-            { tag: "Lunch", name: "Fresh vegetable salad & cutlet 🧆", kcal: 660 },
-            { tag: "Dinner", name: "Buckwheat with meat gravy 🥣", kcal: 900 }
-          ]
-        }
-      ];
-
-      function renderDays(daysCount, targetKcal) {
-        const container = document.getElementById('daysContainer');
-        if (!container) return;
-        container.innerHTML = '';
-
-        const baseTarget = parseInt(targetKcal) || 2000;
-        // Коэффициент для масштабирования калорий блюд под выбранный target
-        const ratio = baseTarget / 2000;
-
-        for (let i = 0; i < daysCount; i++) {
-          const item = defaultSchedule[i];
-
-          // Вычисляем честные калории для каждого приема пищи
-          const computedMeals = item.meals.map(m => ({
-            tag: m.tag,
-            name: m.name,
-            kcal: Math.round(m.kcal * ratio)
-          }));
-
-          // Честная суммарная калорийность дня (Завтрак + Обед + Ужин)
-          const totalDayKcal = computedMeals.reduce((sum, m) => sum + m.kcal, 0);
-
-          const card = document.createElement('article');
-          card.className = 'day-node';
-          
-          let mealsListHTML = computedMeals.map(m => `
-            <li onclick="toggleMeal(this)">
-              <div class="meal-left">
-                <span class="meal-tag">${m.tag}:</span>
-                <span>${m.name}</span>
-              </div>
-              <span class="meal-cal">${m.kcal} kcal</span>
-            </li>
-          `).join('');
-
-          card.innerHTML = `
-            <div class="day-node-header">
-              <span>${item.day}</span>
-              <span class="badge-kcal">${totalDayKcal} kcal</span>
-            </div>
-            <ul class="meal-item-list">
-              ${mealsListHTML}
-            </ul>
-          `;
-          container.appendChild(card);
-        }
-      }
-
-      function toggleMeal(element) {
-        element.classList.toggle('eaten');
-      }
-
-      function updatePlan() {
-        const daysSelect = document.getElementById('daysSelect');
-        const targetCalories = document.getElementById('targetCalories');
-        renderDays(parseInt(daysSelect.value), targetCalories.value);
-      }
-
-      function toggleItem(checkbox) {
-        const row = checkbox.closest('.checklist-row');
-        if (checkbox.checked) {
-          row.classList.add('completed');
-        } else {
-          row.classList.remove('completed');
-        }
-        updateProgress();
-      }
-
-      function addNewProduct() {
-        const input = document.getElementById('customInput');
-        const text = input.value.trim();
-        
-        if (text !== "") {
-          const container = document.getElementById('checklistGroup');
-          const newRow = document.createElement('div');
-          newRow.className = 'checklist-row';
-          
-          const newId = 'item_' + Date.now();
-          newRow.innerHTML = `
-            <div class="checklist-left">
-              <input type="checkbox" id="${newId}" onchange="toggleItem(this)">
-              <label for="${newId}">${text}</label>
-            </div>
-            <button class="btn-delete-item" onclick="deleteItem(this)">×</button>
-          `;
-          
-          container.appendChild(newRow);
-          input.value = "";
-          updateProgress();
-        }
-      }
-
-      function deleteItem(button) {
-        const row = button.closest('.checklist-row');
-        row.remove();
-        updateProgress();
-      }
-
-      function updateProgress() {
-        const total = document.querySelectorAll('.checklist-row').length;
-        const checked = document.querySelectorAll('.checklist-row input[type="checkbox"]:checked').length;
-        const progressEl = document.getElementById('progressTracker');
-        if (progressEl) {
-          progressEl.textContent = `${checked}/${total} completed`;
-        }
-      }
-
-      document.addEventListener('DOMContentLoaded', function() {
-        renderDays(7, 2000);
-        updateProgress();
-      });
-    </script>
+    <script src="js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="js/planner.js"></script>
+    <script src="js/site.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 $(document).ready(function() {
    
-    $('#tipSearch').on('keyup input', function() {
+    $('#tipSearch').on('input', function() {
         let query = $(this).val().toLowerCase().trim();
         let visibleCount = 0;
 
@@ -9,10 +9,10 @@ $(document).ready(function() {
             let text = $(this).text().toLowerCase();
 
             if (keywords.includes(query) || text.includes(query)) {
-                $(this).fadeIn(200);
+                $(this).stop(true, true).show();
                 visibleCount++;
             } else {
-                $(this).fadeOut(200);
+                $(this).stop(true, true).hide();
             }
         });
 

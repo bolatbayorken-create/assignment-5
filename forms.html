@@ -7,21 +7,27 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/site-polish.css">
+    <link rel="stylesheet" href="css/site-layout.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container nav-container">
-            <h1 class="logo">CookFromHome 🍳</h1>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="recipes.html">Recipes</a>
-                <a href="planner.html">Planner</a>
-                <a href="tips.html">Tips</a>
-                <a href="pantry.html">Pantry</a>
-                <a href="forms.html" class="active">Forms</a>
-            </nav>
-        </div>
-    </header>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-topbar">
+    <div class="container header-content">
+        <a href="index.html" class="logo">CookFromHome</a>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="planner.html">Planner</a>
+            <a href="tips.html">Tips</a>
+            <a href="pantry.html">Pantry</a>
+            <a href="forms.html" aria-current="page">Forms</a>
+        </nav>
+        <button id="theme-button" class="theme-toggle" type="button"
+                aria-pressed="false" aria-label="Switch to dark theme">Dark theme</button>
+    </div>
+</header>
 
     <main class="container main-content">
         <section class="tips-hero text-center mb-4">
@@ -57,13 +63,15 @@
         </section>
     </main>
 
-    <footer class="site-footer bg-dark text-white text-center py-4 mt-5">
-        <div class="container">
-            <p class="mb-0">CookFromHome &copy; 2026 | Cook by yourself :3</p>
-        </div>
-    </footer>
+    <footer class="site-footer">
+    <div class="container footer-content">
+        <h2>CookFromHome</h2>
+        <p>Cook by yourself :3</p>
+    </div>
+</footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/forms.js"></script>
+    <script src="js/site.js"></script>
 </body>
 </html>

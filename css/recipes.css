@@ -1,9 +1,3 @@
-/* ==========================================
-   COOKFROMHOME - RECIPES PAGE
-   These classes only style recipes.html.
-   The team's shared header/footer use style.css.
-   ========================================== */
-
 /* 1. PAGE COLORS AND COMMON STYLES */
 .recipes-page {
     --recipe-green: #426c53;

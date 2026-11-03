@@ -9,25 +9,30 @@
     <link rel="stylesheet" href="css/pantry.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/dom.css">
+    <link rel="stylesheet" href="css/site-polish.css">
+    <link rel="stylesheet" href="css/site-layout.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header>
-        <div class="container header-content">
-            <a href="index.html" class="logo">CookFromHome</a>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="recipes.html">Recipes</a>
-                <a href="planner.html">Planner</a>
-                <a href="tips.html">Tips</a>
-                <a href="pantry.html" aria-current="page">Pantry</a>
-                <a href="forms.html">Forms</a>
-            </nav>
-        </div>
-    </header>
+    <header class="site-topbar">
+    <div class="container header-content">
+        <a href="index.html" class="logo">CookFromHome</a>
+        <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="planner.html">Planner</a>
+            <a href="tips.html">Tips</a>
+            <a href="pantry.html" aria-current="page">Pantry</a>
+            <a href="forms.html">Forms</a>
+        </nav>
+        <button id="theme-button" class="theme-toggle" type="button"
+                aria-pressed="false" aria-label="Switch to dark theme">Dark theme</button>
+    </div>
+</header>
 
-    <main class="pantry container">
+    <main class="pantry container" id="main-content">
 
         <section class="pantry-top-card">
             <h1>My Home Pantry & Fridge 🧺</h1>
@@ -160,13 +165,19 @@
             <div class="faq-item">
                 <button type="button" class="faq-question">How do I update product expiration dates?</button>
                 <div class="faq-answer" hidden>
-                    <p>Expiration dates update automatically based on item categories and stock logs.</p>
+                    <p>The expiration dates shown here are examples; they do not update automatically.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <button type="button" class="faq-question">Can I generate recipes directly from my pantry?</button>
                 <div class="faq-answer" hidden>
-                    <p>Yes! Click "Now cook >" below to filter recipes by available ingredients.</p>
+                    <p>You can open the Recipes page using the button below. Add ingredients to the list first to search for them.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button type="button" class="faq-question">How can I remove an ingredient?</button>
+                <div class="faq-answer" hidden>
+                    <p>Click Remove next to an ingredient in your stock list.</p>
                 </div>
             </div>
         </section>
@@ -177,15 +188,15 @@
 
     </main>
 
-    <footer>
-        <div class="container footer-content">
-            <h2>CookFromHome</h2>
-            <p>Cook by yourself :3</p>
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <footer class="site-footer">
+    <div class="container footer-content">
+        <h2>CookFromHome</h2>
+        <p>Cook by yourself :3</p>
+    </div>
+</footer>
+    <script src="js/vendor/jquery-3.6.0.min.js"></script>
     <script src="js/pantry-dom.js" defer></script>
 
+    <script src="js/site.js"></script>
 </body>
 </html>

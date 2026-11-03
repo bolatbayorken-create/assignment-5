@@ -98,3 +98,55 @@
         padding: 10px 18px;
     }
 }
+/* Actual Pantry markup (pantry-main-grid, not old pantry-main). */
+@media (max-width: 768px) {
+    .pantry-main-grid {
+        grid-template-columns: 1fr;
+    }
+    .add-product {
+        flex-wrap: wrap;
+    }
+    .add-product input {
+        min-width: 0;
+        flex: 1 1 200px;
+    }
+    .pantry-top-card,
+    .pantry-added-card,
+    .pantry-shelf,
+    .note-card,
+    .pantry-log-card,
+    .pantry-faq-card {
+        padding: 18px;
+    }
+}
+
+
+/* Recipes: shared responsive rules */
+@media (max-width: 1000px) {
+    .recipes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .recipes-page {
+        padding: 25px 0 55px;
+    }
+
+    .recipes-hero,
+    .recipes-catalog {
+        width: min(92%, 1200px);
+    }
+
+    .recipes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recipes-search-field {
+        max-width: none;
+    }
+
+    .recipes-clear-button {
+        width: 100%;
+    }
+}

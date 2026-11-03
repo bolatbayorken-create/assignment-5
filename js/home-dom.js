@@ -1,23 +1,22 @@
-$(document).ready(function() {
-    $("#welcome-button").on("click", function() {
-        const name = $.trim($("#welcome-name").val());
+$(function () {
+    const $name = $("#welcome-name");
+    const $message = $("#welcome-message");
 
-        if (name === "") {
-            $("#welcome-message").text("Please enter your name first.");
-        } else {
-            $("#welcome-message").text("Welcome to CookFromHome, " + name + "!");
-        }
+    $("#welcome-button").on("click", function () {
+        const name = $name.val().trim();
+        $message.text(name === ""
+            ? "Please enter your name first."
+            : "Welcome to CookFromHome, " + name + "!");
     });
 
-    $("#theme-button").on("click", function() {
-        const darkTheme = $("body").toggleClass("theme-dark").hasClass("theme-dark");
+    $name.on("input", function () {
+        $message.text("Enter your name and press the button.");
+    });
 
-        if (darkTheme) {
-            $(this).text("Switch to light theme");
-        } else {
-            $(this).text("Switch to dark theme");
-        }
-
-        $(this).attr("aria-pressed", String(darkTheme));
+    $(".home-form").on("submit", function (event) {
+        event.preventDefault();
+        const ingredients = $("#ingredients-input").val().trim();
+        if (!ingredients) return;
+        window.location.href = "recipes.html?ingredients=" + encodeURIComponent(ingredients);
     });
 });

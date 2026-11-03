@@ -7,9 +7,15 @@ $(function () {
     const $resultCount = $("#recipes-results-count");
     const $noResults = $("#recipes-no-results");
 
+    const incoming = new URLSearchParams(window.location.search).get("ingredients");
+    if (incoming) $search.val(incoming);
+
     function filterRecipes() {
         // .val() reads the current search and category inputs.
         const query = $.trim($search.val()).toLowerCase();
+        const terms = query.split(/[,;]+/).map(function (part) {
+            return part.trim();
+        }).filter(Boolean);
         const category = $categories.filter(":checked").val() || "all";
         let matches = 0;
 
@@ -20,7 +26,10 @@ $(function () {
             const ingredients = $card.find(".recipes-details-body ul").text().toLowerCase();
             const cardCategory = $card.attr("data-category");
 
-            const matchesText = (title + " " + description + " " + ingredients).includes(query);
+            const content = title + " " + description + " " + ingredients;
+            const matchesText = terms.length === 0 || terms.some(function (term) {
+                return content.includes(term);
+            });
             const matchesCategory = category === "all" || cardCategory === category;
             const visible = matchesText && matchesCategory;
 

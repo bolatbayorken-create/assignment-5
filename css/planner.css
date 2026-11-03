@@ -1,0 +1,262 @@
+/* Meal planner - moved from planner.html */
+:root {
+        --brand-sage: rgb(91, 112, 67);
+        --brand-sage-dark: rgb(67, 91, 49);
+        --cozy-pink-bg: rgb(255, 253, 248);
+        --cozy-pink-border: rgb(220, 210, 180);
+        --cozy-pink-badge: rgb(237, 243, 231);
+        --cozy-pink-text: rgb(91, 112, 67);
+        --bg-light: #f4f7f2;
+        --card-bg: #ffffff;
+        --text-dark: #333d29;
+        --border-color: #e2e8f0;
+      }
+
+      .planner-wrapper {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--text-dark);
+        max-width: 1100px;
+        margin: 20px auto;
+        padding: 10px;
+      }
+
+      .planner-header-box {
+        text-align: center;
+        background: var(--cozy-pink-bg);
+        padding: 24px;
+        border-radius: 8px;
+        border: 1px solid var(--cozy-pink-border);
+        margin-bottom: 24px;
+      }
+
+      .planner-header-box h2 {
+        color: var(--brand-sage-dark);
+        margin: 0 0 8px 0;
+        font-size: 28px;
+      }
+
+      .planner-header-box p {
+        margin: 0;
+        color: #666;
+        font-size: 15px;
+      }
+
+      .planner-grid-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+      }
+
+      .day-node {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-left: 5px solid var(--brand-sage);
+        border-radius: 14px;
+        padding: 18px;
+        margin-bottom: 16px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        transition: transform 0.2s ease;
+      }
+
+      .day-node:hover {
+        transform: translateY(-2px);
+      }
+
+      .day-node-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        font-size: 18px;
+        color: var(--brand-sage-dark);
+        border-bottom: 1px dashed var(--border-color);
+        padding-bottom: 8px;
+        margin-bottom: 12px;
+      }
+
+      .badge-kcal {
+        font-size: 13px;
+        background: var(--cozy-pink-badge);
+        color: var(--cozy-pink-text);
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-weight: 600;
+      }
+
+      .meal-item-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+
+      .meal-item-list li {
+        padding: 6px 0;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+
+      .meal-item-list li.eaten {
+        text-decoration: line-through;
+        opacity: 0.5;
+      }
+
+      .meal-left {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .meal-tag {
+        font-weight: 600;
+        color: var(--brand-sage-dark);
+        min-width: 85px;
+      }
+
+      .meal-cal {
+        font-size: 13px;
+        color: #888;
+        font-weight: 500;
+      }
+
+      .sidebar-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 14px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      }
+
+      .sidebar-card h3 {
+        margin-top: 0;
+        color: var(--brand-sage-dark);
+        font-size: 18px;
+        border-bottom: 2px solid var(--bg-light);
+        padding-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .progress-text {
+        font-size: 12px;
+        font-weight: normal;
+        color: #888;
+      }
+
+      .form-field {
+        margin-bottom: 14px;
+      }
+
+      .form-field label {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+
+      .form-field select, 
+      .form-field input {
+        width: 100%;
+        padding: 9px 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-family: inherit;
+      }
+
+      .btn-action {
+        width: 100%;
+        background-color: var(--brand-sage);
+        color: #ffffff;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .btn-action:hover {
+        background-color: var(--brand-sage-dark);
+      }
+
+      .add-item-box {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 14px;
+      }
+
+      .add-item-box input {
+        flex: 1;
+        padding: 8px 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+
+      .btn-add {
+        background-color: var(--brand-sage);
+        color: white;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .checklist-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 8px 0;
+        border-bottom: 1px solid #f8fafc;
+      }
+
+      .checklist-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .checklist-row input[type="checkbox"] {
+        accent-color: var(--brand-sage);
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+
+      .checklist-row.completed label {
+        text-decoration: line-through;
+        color: #94a3b8;
+      }
+
+      .btn-delete-item {
+        background: none;
+        border: none;
+        color: #cbd5e1;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 0 4px;
+      }
+
+      .btn-delete-item:hover {
+        color: #ef4444;
+      }
+
+/* Match the main content width used throughout CookFromHome. */
+.planner-wrapper {
+    width: min(90%, 1200px);
+    max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+    .planner-grid-layout {
+        grid-template-columns: 1fr;
+    }
+}

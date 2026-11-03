@@ -8,62 +8,59 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/dom.css">
     <link rel="stylesheet" href="css/site-polish.css">
+    <link rel="stylesheet" href="css/site-layout.css">
 </head>
 <body class="home-page">
     <a class="skip-link" href="#main-content">Skip to main content</a>
-     <header>
-        <div class="container header-content">
-            <a href="index.html" class="logo"> CookFromHome </a>
-
-            <nav>
-                 <a href="index.html">Home</a>
-                 <a href="recipes.html">Recipes</a>
-                 <a href="planner.html">Planner</a>
-                 <a href="tips.html">Tips</a>
-                 <a href="pantry.html">Pantry</a>
-                 <a href="forms.html">Forms</a>
-            </nav>
-        </div>
-     </header>
+     <header class="site-topbar">
+    <div class="container header-content">
+        <a href="index.html" class="logo">CookFromHome</a>
+        <nav aria-label="Main navigation">
+            <a href="index.html" aria-current="page">Home</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="planner.html">Planner</a>
+            <a href="tips.html">Tips</a>
+            <a href="pantry.html">Pantry</a>
+            <a href="forms.html">Forms</a>
+        </nav>
+        <button id="theme-button" class="theme-toggle" type="button"
+                aria-pressed="false" aria-label="Switch to dark theme">Dark theme</button>
+    </div>
+</header>
 
      <main id="main-content">
           <section class="home-hero">
               <div class="container home-hero-content">
                   <h1 class="home-title">Cook at home</h1>
-
-                  <section class="dom-home-tools" aria-label="JavaScript interaction practice">
-                      <div class="dom-home-tool">
-                          <h2>Personal welcome</h2>
-                          <label for="welcome-name">Your name</label>
-                          <div class="dom-home-inputs">
-                              <input id="welcome-name" type="text" placeholder="Enter your name">
-                              <button id="welcome-button" type="button">Say hello</button>
-                          </div>
-                          <p id="welcome-message" role="status" aria-live="polite">Enter your name and press the button.</p>
-                      </div>
-                      <div class="dom-home-tool">
-                          <h2>Theme switcher</h2>
-                          <button id="theme-button" type="button" aria-pressed="false">Switch to dark theme</button>
-                          <p>Click again to return to the light theme.</p>
-                      </div>
-                  </section>
+                  <p class="home-subtitle">Find a recipe with the ingredients already in your kitchen.</p>
 
                   <form class="home-form">
                       <label for="ingredients-input" class="home-label">What you got?</label>
                       <div class="home-input-group">
                           <input type="text" id="ingredients-input" class="home-input" placeholder="chicken, eggs, tomatoes..." required>
-                          <button type="submit" class="home-btn">Find recepies</button>
+                          <button type="submit" class="home-btn">Find recipes</button>
                       </div>
                   </form>
+
+                  <section class="home-welcome" aria-label="Personal welcome">
+                      <div class="home-welcome-row">
+                          <label for="welcome-name">Your name</label>
+                          <div class="home-welcome-inputs">
+                              <input id="welcome-name" type="text" placeholder="Enter your name">
+                              <button id="welcome-button" type="button">Say hello</button>
+                          </div>
+                      </div>
+                      <p id="welcome-message" role="status" aria-live="polite">Enter your name and press the button.</p>
+                  </section>
               </div>
           </section>
 
           <section class="home-benefits">
               <div class="container">
-                  <h2 class="home-section-title">why CookFromHome</h2>
+                  <h2 class="home-section-title">Why CookFromHome?</h2>
                   <div class="home-benefits-grid">
                       <article class="home-benefit-card">
-                          <h3 class="home-card-title">Ecenomy</h3>
+                          <h3 class="home-card-title">Economy</h3>
                           <p class="home-card-text">Cook using what you already have at home, and throw away less food.</p>
                       </article>
                       <article class="home-benefit-card">
@@ -79,14 +76,14 @@
           </section>
      </main>
 
-     <footer>
-        <div class="container footer-content">
-            <h2>CookFromHome</h2>
-            <p>Cook by yourself :3</p>
-        </div>
-     </footer>
-
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     <script src="js/home-dom.js"></script>
+     <footer class="site-footer">
+    <div class="container footer-content">
+        <h2>CookFromHome</h2>
+        <p>Cook by yourself :3</p>
+    </div>
+</footer>
+     <script src="js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="js/home-dom.js"></script>
+    <script src="js/site.js"></script>
 </body>
 </html>

@@ -1,0 +1,635 @@
+
+/* Shared header, footer and Home layout */
+
+body > header {
+    background: rgb(255, 253, 248);
+    border-bottom: 1px solid rgb(220, 210, 180);
+}
+
+body > header .header-content {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 12px 18px;
+    padding: 10px 0;
+}
+
+body > header .logo {
+    color: rgb(33, 61, 44);
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+}
+
+body > header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 3px;
+    margin-left: auto;
+}
+
+body > header nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 38px;
+    padding: 7px 10px;
+    color: rgb(41, 70, 50);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+body > header nav a:hover,
+body > header nav a[aria-current="page"] {
+    background: rgb(229, 239, 223);
+    color: rgb(49, 91, 62) !important;
+}
+
+.theme-toggle {
+    flex: none;
+    padding: 9px 12px;
+    background: transparent;
+    border: 1px solid rgb(91, 112, 67);
+    border-radius: 6px;
+    color: rgb(49, 91, 62);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    background: rgb(229, 239, 223);
+}
+
+body > footer {
+    margin-top: auto;
+    padding: 24px 0;
+    background: rgb(33, 61, 44);
+    color: rgb(255, 255, 255);
+}
+
+body > footer .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+body > footer h2,
+body > footer p {
+    margin: 0;
+}
+
+body > footer h2 {
+    font-size: 1.2rem;
+}
+
+/* Home layout */
+
+.home-page .home-hero {
+    padding: 68px 20px 22px;
+}
+
+.home-page .home-hero-content {
+    max-width: 960px;
+}
+
+.home-page .home-title {
+    margin: 0 0 10px;
+    font-size: clamp(2.1rem, 4vw, 2.8rem);
+}
+
+.home-page .home-subtitle {
+    margin: 0 0 28px;
+    font-size: 1rem;
+}
+
+.home-page .home-form {
+    max-width: 660px;
+}
+
+.home-welcome {
+    max-width: 660px;
+    padding: 20px 0 0;
+    margin: 30px auto 0;
+    border-top: 1px solid rgb(220, 210, 180);
+    text-align: left;
+}
+
+.home-welcome-row,
+.home-welcome-inputs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.home-welcome-row > label {
+    flex: 0 0 95px;
+    font-weight: 700;
+}
+
+.home-welcome-inputs {
+    flex: 1;
+}
+
+.home-welcome-inputs input {
+    flex: 1;
+    min-width: 0;
+    padding: 11px 13px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(180, 175, 150);
+    border-radius: 6px;
+}
+
+.home-welcome-inputs button {
+    flex: none;
+    padding: 11px 16px;
+    border: 0;
+    border-radius: 6px;
+    background: rgb(91, 112, 67);
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.home-welcome #welcome-message {
+    margin: 8px 0 0 107px;
+    font-size: 13px;
+    color: rgb(90, 87, 87);
+}
+
+.home-page .home-benefits {
+    padding-top: 34px;
+}
+
+.home-page .home-section-title {
+    margin: 0 0 28px;
+    font-size: 1.75rem;
+}
+
+/* Main dark theme */
+
+body.theme-dark {
+    background: rgb(28, 41, 35) !important;
+    color: rgb(242, 238, 227) !important;
+}
+
+body.theme-dark > header {
+    background: rgb(34, 55, 43) !important;
+    border-bottom-color: rgb(98, 120, 103) !important;
+}
+
+body.theme-dark > header :is(.logo, nav a, .theme-toggle) {
+    color: rgb(242, 238, 227) !important;
+}
+
+body.theme-dark > header nav a:hover,
+body.theme-dark > header nav a[aria-current="page"],
+body.theme-dark .theme-toggle:hover {
+    background: rgb(62, 84, 67) !important;
+}
+
+body.theme-dark > footer {
+    background: rgb(20, 36, 26) !important;
+}
+
+body.theme-dark main :is(
+    .home-benefit-card, .pantry-top-card, .pantry-added-card,
+    .pantry-shelf, .note-card, .pantry-log-card, .pantry-faq-card,
+    .planner-header-box, .day-node, .sidebar-card, .recipes-card,
+    .recipes-hero, .recipes-catalog, .recipes-search-controls,
+    .tip-card, .storage-card, .card, .search-card, .substitutions-card
+) {
+    background: rgb(48, 68, 57) !important;
+    color: rgb(242, 238, 227) !important;
+    border-color: rgb(101, 123, 105) !important;
+}
+
+body.theme-dark main :is(h1, h2, h3, h4, p, label, li, span) {
+    color: inherit;
+}
+
+body.theme-dark input,
+body.theme-dark textarea,
+body.theme-dark select {
+    background: rgb(248, 249, 243);
+    color: rgb(33, 51, 41);
+}
+
+/* Header and Home responsiveness */
+
+@media (max-width: 900px) {
+    body > header nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .theme-toggle {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    body > header .header-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 8px;
+        justify-items: start;
+    }
+
+    body > header .logo {
+        font-size: 20px;
+        grid-column: 1;
+    }
+
+    body > header .theme-toggle {
+        grid-column: 2;
+        margin-left: 0;
+        padding: 7px 9px;
+    }
+
+    body > header nav {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: 100%;
+        gap: 2px;
+        justify-content: center;
+    }
+
+    body > header nav a {
+        padding: 7px 6px;
+        font-size: 12px;
+    }
+
+    .home-page .home-hero {
+        padding: 42px 12px 16px;
+    }
+
+    .home-welcome-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .home-welcome-row > label {
+        flex: none;
+    }
+
+    .home-welcome #welcome-message {
+        margin-left: 0;
+    }
+
+    .home-page .home-benefits {
+        padding-top: 25px;
+    }
+
+    body > footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Dark theme: Recipes */
+
+body.theme-dark .recipes-page {
+    background: rgb(28, 41, 35) !important;
+    color: rgb(242, 238, 227) !important;
+}
+
+body.theme-dark main :is(
+    .recipes-featured-layout,
+    .recipes-tip,
+    .recipes-filters,
+    .recipes-search-field
+) {
+    background: rgb(48, 68, 57) !important;
+    color: rgb(242, 238, 227) !important;
+}
+
+body.theme-dark main :is(
+    h1, h2, h3, h4,
+    .meal-tag, .recipes-meta, .recipes-eyebrow
+) {
+    color: rgb(232, 241, 219) !important;
+}
+
+body.theme-dark .recipes-page :is(
+    .recipes-hero p,
+    .recipes-section-title p,
+    .recipes-card-body > p,
+    .recipes-meta,
+    .recipes-results-count,
+    .recipes-details-body li,
+    .recipes-tag
+) {
+    color: rgb(225, 233, 219) !important;
+}
+
+body.theme-dark .recipes-filters label {
+    background: rgb(52, 72, 61);
+    border-color: rgb(110, 136, 113);
+    color: rgb(244, 242, 229);
+}
+
+body.theme-dark .recipes-details summary {
+    color: rgb(210, 231, 198);
+}
+
+body.theme-dark .recipes-filters label:hover {
+    border-color: rgb(221, 235, 206);
+}
+
+body.theme-dark main .recipes-hero,
+body.theme-dark main .recipes-catalog {
+    background: transparent !important;
+    border-color: rgb(100, 118, 103) !important;
+}
+
+body.theme-dark main .recipes-filters,
+body.theme-dark main .recipes-search-controls,
+body.theme-dark main .recipes-search-field {
+    background: transparent !important;
+}
+
+/* Dark theme: existing page text */
+
+body.theme-dark .day-node-header,
+body.theme-dark .day-node-header > span:first-child,
+body.theme-dark .meal-tag,
+body.theme-dark .sidebar-card h3 {
+    color: rgb(235, 241, 222) !important;
+}
+
+body.theme-dark .pantry-faq-card .faq-question,
+body.theme-dark .pantry-faq-card .faq-question::after {
+    color: rgb(244, 242, 229) !important;
+}
+
+body.theme-dark .pantry-faq-card .faq-answer,
+body.theme-dark .pantry-faq-card .faq-answer p {
+    color: rgb(226, 235, 222) !important;
+}
+
+body.theme-dark .forms-page .tips-hero p,
+body.theme-dark .forms-page .form-text,
+body.theme-dark .forms-page #contactForm .form-text {
+    color: rgb(214, 225, 210) !important;
+}
+
+body.theme-dark > header .header-content nav a[aria-current="page"],
+body.theme-dark > header .header-content nav a[aria-current="page"]:hover {
+    background: rgb(62, 84, 67) !important;
+    color: rgb(248, 247, 238) !important;
+}
+
+body.theme-dark .main-content .tips-hero p,
+body.theme-dark .main-content #contactForm .form-text,
+body.theme-dark .pantry-top-card .subtitle,
+body.theme-dark .pantry-added-card .count-text,
+body.theme-dark .pantry-added-card #pantry-empty-list,
+body.theme-dark .pantry-shelf-title span {
+    color: rgb(218, 230, 213) !important;
+}
+
+body.theme-dark .day-node .badge-kcal {
+    background: rgb(224, 236, 214) !important;
+    color: rgb(40, 68, 47) !important;
+}
+
+/* Dark theme: general text contrast */
+
+body.theme-dark main {
+    color: rgb(242, 238, 227);
+}
+
+body.theme-dark main :is(
+    .home-subtitle,
+    .home-card-text,
+    .home-welcome #welcome-message,
+    .planner-header-box p,
+    .progress-text,
+    .meal-cal,
+    .pantry-top-card .subtitle,
+    .count-text,
+    #pantry-empty-list,
+    #pantry-add-feedback,
+    .pantry-shelf-title span,
+    .note-row p,
+    .recipes-section-title p,
+    .recipes-results-count,
+    .recipes-card-body > p,
+    .recipes-featured-copy > p,
+    .tips-hero p,
+    .text-muted,
+    .form-text,
+    .small.text-muted
+) {
+    color: rgb(213, 226, 208) !important;
+}
+
+body.theme-dark main a:not(.recipes-button):not(.cook-now-btn) {
+    color: rgb(212, 235, 193);
+}
+
+body.theme-dark main a:not(.recipes-button):not(.cook-now-btn):hover {
+    color: rgb(239, 247, 223);
+}
+
+/* Planner: readable day names and meal information */
+
+body.theme-dark .planner-wrapper :is(
+    .day-node-header,
+    .day-node-header > span,
+    .meal-tag,
+    .sidebar-card h3,
+    .planner-header-box h2
+) {
+    color: rgb(235, 241, 222) !important;
+}
+
+body.theme-dark .planner-wrapper .meal-item-list li,
+body.theme-dark .planner-wrapper .checklist-row label,
+body.theme-dark .planner-wrapper .form-field label {
+    color: rgb(238, 238, 228) !important;
+}
+
+body.theme-dark .planner-wrapper .checklist-row.completed label {
+    color: rgb(184, 202, 185) !important;
+}
+
+body.theme-dark .planner-wrapper .badge-kcal {
+    background: rgb(224, 236, 214) !important;
+    color: rgb(40, 68, 47) !important;
+}
+
+body.theme-dark .planner-wrapper .btn-delete-item {
+    color: rgb(243, 183, 172);
+}
+
+/* Pantry: FAQ, shelves and inventory */
+
+body.theme-dark .pantry :is(
+    .faq-question,
+    .pantry-shelf-title h4,
+    .note-row h4,
+    .pantry-added-card h2,
+    .pantry-log-card h3,
+    .pantry-add-product label
+) {
+    color: rgb(244, 242, 229) !important;
+}
+
+body.theme-dark .pantry .faq-question::after {
+    color: rgb(244, 242, 229) !important;
+}
+
+body.theme-dark .pantry .faq-answer,
+body.theme-dark .pantry .faq-answer p {
+    color: rgb(225, 234, 219) !important;
+}
+
+body.theme-dark .pantry .foods p,
+body.theme-dark .pantry #pantry-product-list li,
+body.theme-dark .pantry .log-row {
+    background: rgb(57, 79, 65) !important;
+    color: rgb(242, 238, 227) !important;
+    border-color: rgb(101, 123, 105) !important;
+}
+
+body.theme-dark .pantry .foods p:hover {
+    background: rgb(76, 105, 79) !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+body.theme-dark .pantry .log-head {
+    background: rgb(67, 89, 72) !important;
+    color: rgb(248, 247, 235) !important;
+}
+
+body.theme-dark .pantry .badge.warn {
+    background: rgb(253, 243, 216) !important;
+    color: rgb(107, 70, 8) !important;
+}
+
+body.theme-dark .pantry .badge.urgent {
+    background: rgb(253, 232, 232) !important;
+    color: rgb(147, 39, 39) !important;
+}
+
+/* Recipes: readable cards, filters and buttons */
+
+body.theme-dark .recipes-page :is(
+    .recipes-details-body h4,
+    .recipes-details summary,
+    .recipes-eyebrow,
+    .recipes-card h3,
+    .recipes-featured-copy h3,
+    .recipes-featured-copy h4
+) {
+    color: rgb(221, 239, 206) !important;
+}
+
+body.theme-dark .recipes-page .recipes-details[open] summary {
+    background: rgb(72, 106, 77) !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+body.theme-dark .recipes-page :is(
+    .recipes-tag,
+    .recipes-perks span
+) {
+    background: rgb(65, 90, 71) !important;
+    color: rgb(239, 247, 224) !important;
+}
+
+body.theme-dark .recipes-page .recipes-filters label {
+    background: rgb(52, 72, 61) !important;
+    color: rgb(242, 238, 227) !important;
+    border-color: rgb(110, 136, 113) !important;
+}
+
+/* Tips and Forms: text, tables and messages */
+
+body.theme-dark .main-content .tips-hero {
+    background: rgb(48, 68, 57) !important;
+    color: rgb(242, 238, 227) !important;
+    border-color: rgb(101, 123, 105) !important;
+}
+
+body.theme-dark .main-content .tips-hero h2,
+body.theme-dark .main-content .tip-card h4,
+body.theme-dark .main-content .text-success {
+    color: rgb(220, 239, 202) !important;
+}
+
+body.theme-dark .main-content .hero-badge {
+    background: rgb(74, 102, 76) !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+body.theme-dark .main-content .tip-card p,
+body.theme-dark .main-content .text-muted {
+    color: rgb(218, 231, 213) !important;
+}
+
+body.theme-dark .main-content .table {
+    --bs-table-bg: rgb(48, 68, 57);
+    --bs-table-color: rgb(242, 238, 227);
+    --bs-table-border-color: rgb(101, 123, 105);
+    --bs-table-striped-bg: rgb(58, 78, 65);
+    --bs-table-striped-color: rgb(242, 238, 227);
+
+    color: rgb(242, 238, 227) !important;
+}
+
+body.theme-dark .main-content .custom-table thead {
+    background: rgb(65, 88, 71) !important;
+    color: rgb(242, 238, 227) !important;
+}
+
+body.theme-dark .main-content .custom-table :is(th, td) {
+    color: rgb(242, 238, 227) !important;
+    border-color: rgb(101, 123, 105) !important;
+}
+
+body.theme-dark .main-content .invalid-feedback,
+body.theme-dark .main-content .text-danger {
+    color: rgb(255, 170, 161) !important;
+}
+
+body.theme-dark .main-content .alert-success {
+    background: rgb(228, 243, 226) !important;
+    color: rgb(33, 84, 46) !important;
+}
+
+body.theme-dark .main-content .alert-warning {
+    background: rgb(253, 242, 209) !important;
+    color: rgb(99, 70, 20) !important;
+}
+
+/* Final contrast corrections */
+
+body.theme-dark .planner-wrapper .day-node .day-node-header .badge-kcal {
+    background: rgb(224, 236, 214) !important;
+    color: rgb(40, 68, 47) !important;
+}
+
+body.theme-dark .recipes-page .recipes-details summary {
+    background: rgb(65, 90, 71) !important;
+    color: rgb(239, 247, 224) !important;
+}
+
+body.theme-dark .recipes-page .recipes-details[open] summary {
+    background: rgb(72, 106, 77) !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+body.theme-dark .main-content .btn-success,
+body.theme-dark .main-content .btn-success:hover {
+    color: rgb(255, 255, 255) !important;
+}
