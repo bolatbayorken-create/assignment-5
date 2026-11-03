@@ -3,280 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CookFromHome - Forms</title>
+    <title>Contact & Registration — CookFromHome</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/forms.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/site-polish.css">
 </head>
 <body>
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    <header>
-        <div class="container header-content">
-            <a href="index.html" class="logo">CookFromHome</a>
-            <nav>
+    <!-- Единая шапка сайта в стиле всего проекта -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <h1 class="logo">CookFromHome 🍳</h1>
+            <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="recipes.html">Recipes</a>
                 <a href="planner.html">Planner</a>
                 <a href="tips.html">Tips</a>
                 <a href="pantry.html">Pantry</a>
-                <a href="forms.html">Forms</a>
+                <a href="forms.html" class="active">Forms</a>
             </nav>
         </div>
     </header>
 
-<main class="container" id="main-content">
+    <main class="container main-content">
+        <!-- Заголовок страницы в стиле Planner/Tips -->
+        <section class="forms-hero text-center mb-4">
+            <div class="hero-badge">Get in Touch 📬</div>
+            <h2>Contact & Registration</h2>
+            <p class="text-muted">We would love to hear from you! Send us a message or register your account.</p>
+        </section>
 
-    <h1 class="forms-title">Contact & Registration</h1>
-
-    <!-- Contact Form (Task 0-2) -->
-    <section class="forms-section">
-        <h2>Contact Us</h2>
-        <form id="contactForm" class="needs-validation" novalidate>
-            <div class="row g-3">
-                <!-- Name -->
-                <div class="col-md-6">
-                    <label for="contactName" class="form-label">Name</label>
-                    <input type="text" class="form-control"
-                           id="contactName" name="contactName"
-                           minlength="2" required>
-
-                    <div class="valid-feedback">Looks good!</div>
-                    <div class="invalid-feedback">
-                        Name must contain at least 2 characters.
+        <!-- Блок контактной формы (Task 5) -->
+        <section class="card shadow-sm p-4 mb-5">
+            <h3 class="h4 mb-4 text-success">Contact Us ✉️</h3>
+            <form id="contactForm" novalidate>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="nameInput" class="form-label font-weight-bold">Name</label>
+                        <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="emailInput" class="form-label font-weight-bold">Email</label>
+                        <input type="email" id="emailInput" class="form-control" placeholder="user@example.com">
                     </div>
                 </div>
-                <!-- Email -->
-                <div class="col-md-6">
-                    <label for="contactEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control"
-                           id="contactEmail" name="contactEmail"
-                           required>
-
-                    <div class="valid-feedback">Valid email!</div>
-                    <div class="invalid-feedback">
-                        Please enter a valid email.
-                    </div>
+                <div class="mb-3">
+                    <label for="messageInput" class="form-label font-weight-bold">Message</label>
+                    <textarea id="messageInput" class="form-control" rows="4" placeholder="Write your message here..."></textarea>
+                    <div class="form-text">Message must be 10–500 characters.</div>
                 </div>
-                <!-- Message -->
-                <div class="col-12">
-                    <label for="contactMessage" class="form-label">
-                        Message
-                    </label>
-                    <textarea class="form-control"
-                              id="contactMessage" name="contactMessage"
-                              rows="4" minlength="10"
-                              maxlength="500" required></textarea>
+                <button type="submit" class="btn btn-success px-4 py-2">Send Message</button>
+            </form>
+        </section>
+    </main>
 
-                    <div class="form-text">
-                        Message must be 10–500 characters.
-                    </div>
-                    <div class="valid-feedback">Looks good!</div>
-                    <div class="invalid-feedback">
-                        Message must contain 10–500 characters.
-                    </div>
-                </div>
-                <!-- Submit -->
-                <div class="col-12">
-                    <button type="submit" class="button forms-button">
-                        Send Message
-                    </button>
-                </div>
-            </div>
-            <div class="alert alert-success mt-3 form-success"
-                 role="status" hidden>
-                Message validated successfully! (Demo only)
-            </div>
-        </form>
-    </section>
-
-
-    <!-- Registration Form (Task 3) -->
-    <section class="forms-section">
-        <h2>Registration</h2>
-
-        <form id="registerForm" class="needs-validation" novalidate>
-            <div class="row g-3">
-
-                <!-- First Name -->
-                <div class="col-md-6">
-                    <label for="firstName" class="form-label">
-                        First Name
-                    </label>
-                    <input type="text" class="form-control"
-                           id="firstName" name="firstName"
-                           minlength="2" required>
-
-                    <div class="valid-feedback">Looks good!</div>
-                    <div class="invalid-feedback">
-                        Enter at least 2 characters.
-                    </div>
-                </div>
-
-                <!-- Last Name -->
-                <div class="col-md-6">
-                    <label for="lastName" class="form-label">
-                        Last Name
-                    </label>
-                    <input type="text" class="form-control"
-                           id="lastName" name="lastName"
-                           minlength="2" required>
-
-                    <div class="valid-feedback">Looks good!</div>
-                    <div class="invalid-feedback">
-                        Enter at least 2 characters.
-                    </div>
-                </div>
-
-                <!-- Email -->
-                <div class="col-12">
-                    <label for="registerEmail" class="form-label">
-                        Email
-                    </label>
-                    <input type="email" class="form-control"
-                           id="registerEmail" name="registerEmail"
-                           required>
-
-                    <div class="valid-feedback">Valid email!</div>
-                    <div class="invalid-feedback">
-                        Please enter a valid email.
-                    </div>
-                </div>
-
-                <!-- Password -->
-                <div class="col-md-6">
-                    <label for="password" class="form-label">
-                        Password
-                    </label>
-                    <input type="password" class="form-control"
-                           id="password" name="password"
-                           minlength="8" required>
-
-                    <div class="valid-feedback">Looks good!</div>
-                    <div class="invalid-feedback">
-                        Password must have at least 8 characters.
-                    </div>
-                </div>
-
-                <!-- Confirm Password -->
-                <div class="col-md-6">
-                    <label for="confirmPassword" class="form-label">
-                        Confirm Password
-                    </label>
-                    <input type="password" class="form-control"
-                           id="confirmPassword" name="confirmPassword"
-                           minlength="8" required>
-
-                    <div class="valid-feedback">Passwords match!</div>
-                    <div class="invalid-feedback" id="passwordError">
-                        Password must match and contain 8+ characters.
-                    </div>
-                </div>
-
-                <!-- Gender -->
-                <fieldset class="col-12">
-                    <legend class="forms-label">Gender (optional)</legend>
-
-                    <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input"
-                               id="genderMale" name="gender" value="male">
-                        <label class="form-check-label" for="genderMale">
-                            Male
-                        </label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input"
-                               id="genderFemale" name="gender" value="female">
-                        <label class="form-check-label" for="genderFemale">
-                            Female
-                        </label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input type="radio" class="form-check-input"
-                               id="genderOther" name="gender" value="prefer">
-                        <label class="form-check-label" for="genderOther">
-                            Prefer not to say
-                        </label>
-                    </div>
-                </fieldset>
-
-                <!-- Interests -->
-                <fieldset class="col-12">
-                    <legend class="forms-label">Interests (optional)</legend>
-
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input"
-                               id="baking" name="interests" value="baking">
-                        <label class="form-check-label" for="baking">
-                            Baking
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input"
-                               id="healthyFood" name="interests"
-                               value="healthy">
-                        <label class="form-check-label" for="healthyFood">
-                            Healthy Food
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input"
-                               id="cooking" name="interests" value="cooking">
-                        <label class="form-check-label" for="cooking">
-                            Cooking
-                        </label>
-                    </div>
-                </fieldset>
-
-                <!-- Country -->
-                <div class="col-12">
-                    <label for="country" class="form-label">Country</label>
-                    <select id="country" name="country"
-                            class="form-select" required>
-                        <option value="">Select country</option>
-                        <option value="kz">Kazakhstan</option>
-                        <option value="us">United States</option>
-                        <option value="uk">United Kingdom</option>
-                        <option value="other">Other</option>
-                    </select>
-
-                    <div class="valid-feedback">Looks good!</div>
-                    <div class="invalid-feedback">
-                        Please select a country.
-                    </div>
-                </div>
-
-                <!-- Buttons -->
-                <div class="col-12">
-                    <button type="submit" class="button forms-button">
-                        Register
-                    </button>
-                    <button type="reset" class="button button-secondary">
-                        Reset
-                    </button>
-                </div>
-            </div>
-
-            <div class="alert alert-success mt-3 form-success"
-                 role="status" hidden>
-                Registration successful! (Demo only)
-            </div>
-        </form>
-    </section>
-
-</main>
-
-    <footer>
-        <div class="container footer-content">
-            <h2>CookFromHome</h2>
-            <p> Cook by yourself :3</p>
+    <!-- Подвал сайта -->
+    <footer class="site-footer bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">CookFromHome &copy; 2026 | Cook by yourself :3</p>
         </div>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/forms.js"></script>
 </body>
 </html>
