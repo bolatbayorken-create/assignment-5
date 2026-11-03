@@ -1,472 +1,110 @@
-.pantry {
-    padding-top: 20px;
-    padding-bottom: 50px;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+body {
+    background-color: #fcf8f2;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding-top: 70px;
 }
 
-/* Main cards */
-.pantry-top-card,
-.pantry-added-card,
-.pantry-shelf,
-.note-card,
-.pantry-log-card,
-.pantry-faq-card {
+.site-header {
     background: #ffffff;
-    border-radius: 16px;
-    padding: 24px 28px;
-    margin-bottom: 24px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    border: 1px solid #eae6d9;
-    box-sizing: border-box;
-    min-width: 0;
-}
-
-/* Top card */
-.pantry-top-card h1 {
-    font-size: 2.2rem;
-    color: #3d5240;
-    margin-bottom: 6px;
-    font-weight: 700;
-}
-
-.pantry-top-card .subtitle {
-    color: #6b7c6e;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-}
-
-/* Add product */
-.pantry-add-product label {
-    font-weight: 600;
-    color: #3d5240;
-    display: block;
-    margin-bottom: 8px;
-}
-
-.add-product {
-    display: flex;
-    gap: 12px;
-    max-width: 480px;
+    border-bottom: 1px solid #eaeaea;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
-.add-product input {
-    flex: 1;
-    min-width: 0;
-    padding: 11px 16px;
-    border: 1px solid #889f77;
-    background-color: #ffffff;
-    border-radius: 10px;
-    color: #2d4030;
-    font-size: 0.95rem;
-    outline: none;
-    box-sizing: border-box;
-}
-
-.add-product button {
-    background-color: #889f77;
-    color: #ffffff;
-    border: none;
-    padding: 11px 22px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.add-product button:hover {
-    background-color: #6d845c;
-}
-
-#pantry-add-feedback {
-    font-size: 0.85rem;
-    color: #4a5d4e;
-    font-weight: 500;
-    margin-top: 10px;
-    margin-bottom: 0;
-}
-
-/* Added products */
-.pantry-added-card h2 {
-    color: #3d5240;
-    margin-bottom: 4px;
-    font-size: 1.4rem;
-}
-
-.count-text {
-    color: #6b7c6e;
-    font-size: 0.9rem;
-    margin-bottom: 12px;
-}
-
-#pantry-empty-list {
-    color: #8fa08e;
-    font-style: italic;
-    margin: 10px 0;
-}
-
-#pantry-product-list {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-}
-
-#pantry-product-list li {
-    background: #f8faf6;
-    border: 1px solid #e2ebd8;
-    border-radius: 10px;
-    padding: 10px 18px;
-    margin-bottom: 10px;
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    font-weight: 600;
-    color: #3d5240;
+    padding: 12px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-#pantry-product-list li button {
-    background-color: #d9534f;
-    color: #ffffff;
-    border: none;
-    padding: 6px 14px;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-/* Main pantry grid */
-.pantry-main-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-    gap: 24px;
-}
-
-/* Pantry shelf */
-.pantry-shelf-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid #f0efe6;
-    padding-bottom: 8px;
-}
-
-.pantry-shelf-title h4 {
-    color: #3d5240;
-    margin: 0;
-    font-weight: 700;
-}
-
-.pantry-shelf-title span {
-    color: #8fa08e;
-    font-size: 0.85rem;
-}
-
-.foods {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-top: 14px;
-}
-
-.foods p {
-    background: #f4f7f2;
-    border: 1px solid #d8e2d4;
-    color: #3d5240;
-    padding: 7px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    margin: 0;
-    transition: all 0.2s;
-}
-
-.foods p:hover {
-    background: #889f77;
-    border-color: #889f77;
-    color: #ffffff;
-}
-
-/* Expiration card */
-.note-card {
-    background: #fffef7;
-    border: 1px solid #f5e8c7;
-    height: fit-content;
-}
-
-.note-card h2 {
-    color: #3d5240;
-    font-size: 1.3rem;
-    margin-bottom: 16px;
-}
-
-.note-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 1px dashed #eee3c3;
-    padding: 12px 0;
-}
-
-.note-row:last-child {
-    border-bottom: none;
-}
-
-.note-row h4 {
-    margin: 0;
-    color: #3d5240;
-    font-size: 0.95rem;
-}
-
-.note-row p {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #8fa08e;
-}
-
-.badge {
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    white-space: nowrap;
-}
-
-.badge.warn {
-    background: #fdf3d8;
-    color: #b58105;
-}
-
-.badge.urgent {
-    background: #fde8e8;
-    color: #c84040;
-}
-
-/* Log */
-.pantry-log-card {
-    overflow: hidden;
-}
-
-.pantry-log-card h3 {
-    color: #3d5240;
-    margin-bottom: 16px;
-}
-
-.log-table {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-}
-
-.log-row {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
-    padding: 12px 16px;
-    border-radius: 10px;
-    background: #fbfcf9;
-    border: 1px solid #f0f4ee;
-    align-items: center;
-    color: #3d5240;
-    font-size: 0.95rem;
-    box-sizing: border-box;
-}
-
-.log-head {
-    background: #eef3ec;
-    font-weight: 700;
-    border: none;
-}
-
-/* FAQ */
-.pantry-faq-card h2 {
-    color: #3d5240;
-    margin-bottom: 15px;
-}
-
-.faq-item {
-    border-bottom: 1px solid #f0efe6;
-    padding: 10px 0;
-}
-
-.faq-question {
-    background: none;
-    border: none;
-    width: 100%;
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.95rem;
-    color: #3d5240;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-    padding: 5px 0;
-}
-
-.faq-question::after {
-    content: "+";
-    font-size: 1.2rem;
-    color: #889f77;
+.logo {
+    font-size: 22px;
+    color: #385e42;
     font-weight: bold;
+    margin: 0;
 }
 
-.faq-question.active::after {
-    content: "-";
-}
-
-.faq-answer {
-    padding: 8px 0 5px;
-    color: #6b7c6e;
-    font-size: 0.9rem;
-}
-
-/* Cook button */
-.pantry-cook-btn-wrap {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.cook-now-btn {
-    display: inline-block;
-    background-color: #889f77;
-    color: #ffffff;
-    padding: 14px 32px;
-    border-radius: 12px;
-    font-weight: 700;
+.nav-links a {
+    margin-left: 15px;
     text-decoration: none;
-    font-size: 1.1rem;
-    transition: background-color 0.2s;
+    color: #333;
+    font-weight: 500;
+    font-size: 15px;
 }
 
-.cook-now-btn:hover {
-    background-color: #6d845c;
+.nav-links a.active, .nav-links a:hover {
+    color: #385e42;
+    border-bottom: 2px solid #385e42;
+    padding-bottom: 3px;
 }
 
-/* ==============================
-   TABLET
-   ============================== */
+
+.main-content, .container, .pantry.container {
+    max-width: 1200px !important;
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+.card, .pantry-top-card, .pantry-added-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+}
+
+.pantry-categories, .categories-grid, .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.category-column, .col-md-4, .col-md-6 {
+    flex: 1;
+    min-width: 280px;
+}
+
+
+#addPantryBtn {
+    background-color: #385e42 !important;
+    border-color: #385e42 !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+#addPantryBtn:hover {
+    background-color: #2e4e36 !important;
+}
 
 @media (max-width: 768px) {
-    .pantry-main-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
+    body {
+        padding-top: 60px;
     }
-
-    .pantry-top-card,
-    .pantry-added-card,
-    .pantry-shelf,
-    .note-card,
-    .pantry-log-card,
-    .pantry-faq-card {
-        padding: 20px;
-    }
-
-    .pantry-top-card h1 {
-        font-size: 1.9rem;
-    }
-}
-
-/* ==============================
-   MOBILE
-   ============================== */
-
-@media (max-width: 600px) {
-    .pantry {
-        padding-top: 14px;
-        padding-bottom: 30px;
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    .pantry-top-card,
-    .pantry-added-card,
-    .pantry-shelf,
-    .note-card,
-    .pantry-log-card,
-    .pantry-faq-card {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        padding: 18px;
-        margin-bottom: 16px;
-        box-sizing: border-box;
-    }
-
-    .pantry-top-card h1 {
-        font-size: 1.65rem;
-    }
-
-    .pantry-main-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 16px;
-        width: 100%;
-    }
-
-    .add-product {
+    .nav-container {
         flex-direction: column;
-        width: 100%;
-        max-width: 100%;
+        padding: 8px 10px;
     }
-
-    .add-product input,
-    .add-product button {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-    }
-
-    .pantry-shelf-title {
-        align-items: flex-start;
+    .nav-links {
+        display: flex;
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 5px;
     }
-
-    .foods {
-        gap: 8px;
-    }
-
-    .foods p {
-        padding: 6px 12px;
-        font-size: 0.85rem;
-    }
-
-    .note-row {
-        flex-wrap: wrap;
-    }
-
-    #pantry-product-list li {
-        flex-wrap: wrap;
-    }
-
-    .log-row {
-        grid-template-columns: 1fr;
-        gap: 5px;
-        padding: 12px;
-    }
-
-    .log-head {
-        display: none;
-    }
-
-    .faq-question {
-        align-items: flex-start;
-    }
-
-    .cook-now-btn {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        text-align: center;
+    .nav-links a {
+        margin: 0 5px;
+        font-size: 13px;
     }
 }

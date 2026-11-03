@@ -1,116 +1,117 @@
-
-* {
-    box-sizing: border-box;
+body {
+    background-color: #fcf8f2;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding-top: 70px; /
 }
 
-/* Main */
-
-main {
-    padding: 40px 0 50px;
+.site-header {
+    background: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
-.forms-title {
-    font-size: 36px;
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 22px;
+    color: #385e42;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin: 0;
 }
 
-.forms-section {
-    background: rgb(255, 253, 248);
-    border: 1px solid rgb(201, 195, 181);
-    border-radius: 8px;
-    padding: 30px;
-    margin-bottom: 35px;
+.nav-links a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 15px;
 }
 
-.forms-section h2 {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.nav-links a.active, .nav-links a:hover {
+    color: #385e42;
+    border-bottom: 2px solid #385e42;
+    padding-bottom: 3px;
 }
 
-/* Form */
-
-.form-label, .forms-label {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 8px;
+.main-content {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 15px;
 }
 
-.forms-label {
-    display: block;
-    margin-bottom: 12px;
+.forms-hero {
+    background: #fff0f3;
+    border: 2px dashed #ffb3c1;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
 }
 
-.form-control, .form-select {
-    border: 1px solid rgb(189, 183, 169);
-    border-radius: 5px;
-    padding: 10px;
-    background: white;
-}
-
-.form-control:focus, .form-select:focus {
-    border-color: rgb(83, 115, 86);
-    box-shadow: 0 0 0 3px rgba(83, 115, 86, 0.15);
-}
-
-.form-check {
-    margin-bottom: 8px;
-}
-
-.form-check-input, .form-check-label {
-    cursor: pointer;
-}
-
-.form-check-input:checked {
-    background: rgb(36, 71, 53);
-    border-color: rgb(36, 71, 53);
-}
-
-/* Buttons */
-
-.forms-button, .button-secondary {
-    border: none;
-    padding: 10px 25px;
-}
-
-.forms-button {
-    background: rgb(36, 71, 53);
+.hero-badge {
+    display: inline-block;
+    background: #ff758c;
     color: white;
-    border-radius: 5px;
-}
-
-.forms-button:hover {
-    background: rgb(61, 101, 78);
-    color: white;
-}
-
-.button-secondary {
-    background: rgb(182, 41, 23);
-    border-radius: 5px;
-}
-
-.button-secondary:hover {
-    background: rgb(112, 119, 108);
-}
-
-/* Validation */
-
-.valid-feedback {
-    color: rgb(33, 134, 75);
-}
-
-.invalid-feedback {
-    color: rgb(196, 58, 58);
-}
-
-.form-text {
+    padding: 4px 12px;
+    border-radius: 20px;
     font-size: 13px;
-    color: rgb(119, 119, 119);
+    margin-bottom: 8px;
 }
 
-.form-success {
-    background: rgb(225, 242, 229);
-    border: 1px solid rgb(144, 199, 158);
-    color: rgb(36, 104, 59);
+.forms-hero h2 {
+    color: #385e42;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.btn-success {
+    background-color: #385e42;
+    border-color: #385e42;
+}
+
+.btn-success:hover {
+    background-color: #2e4e36;
+    border-color: #2e4e36;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+    .nav-container {
+        flex-direction: column;
+        padding: 8px 10px;
+    }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 5px;
+    }
+    .nav-links a {
+        margin: 0 5px;
+        font-size: 13px;
+    }
 }

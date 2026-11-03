@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="css/tips.css">
 </head>
 <body>
+    <!-- Шапка сайта -->
     <header class="site-header">
         <div class="container nav-container">
-            <h1 class="logo">CookFromHome</h1>
+            <h1 class="logo">CookFromHome 🍳</h1>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="recipes.html">Recipes</a>
@@ -24,68 +25,84 @@
     </header>
 
     <main class="container main-content">
+        <!-- Розовый блок в стиле Planner -->
         <section class="tips-hero text-center">
             <div class="hero-badge">Kitchen Wisdom 🌸</div>
             <h2>Kitchen Tips & Food Hacks</h2>
             <p>Master essential culinary skills, learn how to store ingredients properly, and discover smart substitutions.</p>
         </section>
 
+        <!-- Поиск советов (Task 3) -->
         <section class="card shadow-sm p-4 mb-4">
-            <h3 class="h5 mb-3">Smart Cooking Hacks</h3>
+            <h3 class="h5 mb-3">Smart Cooking Hacks 🔍</h3>
             <div class="mb-3">
                 <label for="searchInput" class="form-label">Search cooking tips</label>
-                <input type="text" id="searchInput" class="form-control" placeholder="Try: herbs, eggs, sugar...">
+                <input type="text" id="searchInput" class="form-control" placeholder="Try: herbs, eggs, sugar, garlic...">
             </div>
-            <div id="matchCount" class="text-muted small">Matching tips: 6</div>
+            <div id="matchCount" class="text-muted small">Matching tips: 8</div>
             <div id="noResultsMessage" class="text-danger mt-2" style="display: none;">No results found. Try a different keyword!</div>
         </section>
-        
+
+        <!-- Карточки советов (добавили смайлики и 2 новых совета) -->
         <div class="row tips-grid" id="tipsContainer">
             <div class="col-md-4 mb-4 filter-item">
                 <div class="card h-100 p-3 tip-card">
-                    <h4 class="h6 font-weight-bold text-success">1. Revive Wilted Herbs</h4>
+                    <h4 class="h6 font-weight-bold text-success">🌿 1. Revive Wilted Herbs</h4>
                     <p class="text-muted small mt-2">Soak limp cilantro, parsley, or lettuce in a bowl of ice water with a splash of lemon juice for 15-30 minutes to make them crisp again.</p>
                 </div>
             </div>
             <div class="col-md-4 mb-4 filter-item">
                 <div class="card h-100 p-3 tip-card">
-                    <h4 class="h6 font-weight-bold text-success">2. Fix Over-Salted Soup</h4>
+                    <h4 class="h6 font-weight-bold text-success">🍲 2. Fix Over-Salted Soup</h4>
                     <p class="text-muted small mt-2">Drop a peeled raw potato or a small amount of rice into the pot. It will absorb excess salt while simmering. Remove before serving.</p>
                 </div>
             </div>
             <div class="col-md-4 mb-4 filter-item">
                 <div class="card h-100 p-3 tip-card">
-                    <h4 class="h6 font-weight-bold text-success">3. Ripen Avocados Fast</h4>
+                    <h4 class="h6 font-weight-bold text-success">🥑 3. Ripen Avocados Fast</h4>
                     <p class="text-muted small mt-2">Place an unripe avocado in a brown paper bag with a banana or an apple. Natural ethylene gas released by the fruit accelerates ripening.</p>
                 </div>
             </div>
             <div class="col-md-4 mb-4 filter-item">
                 <div class="card h-100 p-3 tip-card">
-                    <h4 class="h6 font-weight-bold text-success">4. Prevent Onion Tears</h4>
+                    <h4 class="h6 font-weight-bold text-success">🧅 4. Prevent Onion Tears</h4>
                     <p class="text-muted small mt-2">Chill the onion in the refrigerator for 30 minutes before cutting. Lower temperatures slow down the release of the enzyme that causes crying.</p>
                 </div>
             </div>
             <div class="col-md-4 mb-4 filter-item">
                 <div class="card h-100 p-3 tip-card">
-                    <h4 class="h6 font-weight-bold text-success">5. Test Egg Freshness</h4>
+                    <h4 class="h6 font-weight-bold text-success">🥚 5. Test Egg Freshness</h4>
                     <p class="text-muted small mt-2">Submerge eggs in a bowl of cold water. If they sink flat to the bottom, they are very fresh. If they stand up or float, they are old.</p>
                 </div>
             </div>
             <div class="col-md-4 mb-4 filter-item">
                 <div class="card h-100 p-3 tip-card">
-                    <h4 class="h6 font-weight-bold text-success">6. Soften Hard Brown Sugar</h4>
+                    <h4 class="h6 font-weight-bold text-success">🥐 6. Soften Hard Brown Sugar</h4>
                     <p class="text-muted small mt-2">Place hardened brown sugar in a microwave-safe bowl with a damp paper towel and microwave in 20-second bursts until soft.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 filter-item">
+                <div class="card h-100 p-3 tip-card">
+                    <h4 class="h6 font-weight-bold text-success">🧄 7. Peel Garlic Instantly</h4>
+                    <p class="text-muted small mt-2">Place garlic cloves inside two small bowls pressed together and shake vigorously for 15 seconds. The skins will slip right off!</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4 filter-item">
+                <div class="card h-100 p-3 tip-card">
+                    <h4 class="h6 font-weight-bold text-success">🍋 8. Get More Citrus Juice</h4>
+                    <p class="text-muted small mt-2">Roll lemons or limes firmly on the counter before cutting, or microwave them for 10 seconds to burst juice vesicles for maximum extraction.</p>
                 </div>
             </div>
         </div>
 
+        <!-- Красивая стильная таблица -->
         <section class="my-5">
-            <h3 class="text-center mb-3">Emergency Ingredient Substitutions</h3>
+            <h3 class="text-center mb-3">Emergency Ingredient Substitutions 🔄</h3>
             <p class="text-center text-muted mb-4">Out of a key ingredient? Use these tested kitchen swaps in a pinch.</p>
-            <div class="table-responsive">
-                <table class="table table-striped">
+            <div class="table-responsive styled-table-wrapper">
+                <table class="table table-hover mb-0">
                     <thead>
-                        <tr class="bg-success text-white">
+                        <tr class="table-header-custom">
                             <th>Original Ingredient</th>
                             <th>Amount</th>
                             <th>Best Substitute</th>
@@ -94,25 +111,25 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Buttermilk</td>
+                            <td><strong>🥛 Buttermilk</strong></td>
                             <td>1 cup</td>
                             <td>1 tbsp lemon juice + milk</td>
                             <td>Let sit for 5 minutes before using.</td>
                         </tr>
                         <tr>
-                            <td>Sour Cream</td>
+                            <td><strong>🥣 Sour Cream</strong></td>
                             <td>1 cup</td>
                             <td>Plain Greek Yogurt</td>
                             <td>Provides a nearly identical texture and tang.</td>
                         </tr>
                         <tr>
-                            <td>Brown Sugar</td>
+                            <td><strong>🍯 Brown Sugar</strong></td>
                             <td>1 cup</td>
                             <td>1 cup white sugar + 1 tbsp molasses</td>
                             <td>Mix well before incorporating into batter.</td>
                         </tr>
                         <tr>
-                            <td>Eggs (for baking)</td>
+                            <td><strong>🍏 Eggs (for baking)</strong></td>
                             <td>1 egg</td>
                             <td>1/4 cup unsweetened applesauce</td>
                             <td>Great for moisture in cakes and muffins.</td>
@@ -123,6 +140,7 @@
         </section>
     </main>
 
+    <!-- Подвал -->
     <footer class="site-footer bg-dark text-white text-center py-4 mt-5">
         <div class="container">
             <p class="mb-0">CookFromHome &copy; 2026 | Cook by yourself :3</p>
