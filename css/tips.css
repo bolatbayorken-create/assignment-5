@@ -1,5 +1,5 @@
 body {
-    background-color: #fcf8f2;
+    background-color: #f4efe6;
     font-family: Arial, sans-serif;
     color: #333;
     margin: 0;
@@ -28,7 +28,7 @@ body {
 
 .logo {
     font-size: 22px;
-    color: #385e42;
+    color: #3d5240;
     font-weight: bold;
     margin: 0;
 }
@@ -42,8 +42,8 @@ body {
 }
 
 .nav-links a.active, .nav-links a:hover {
-    color: #385e42;
-    border-bottom: 2px solid #385e42;
+    color: #3d5240;
+    border-bottom: 2px solid #3d5240;
     padding-bottom: 3px;
 }
 
@@ -55,7 +55,7 @@ body {
 
 .tips-hero {
     background: #fff0f3;
-    border: 2px dashed #7a9a60;
+    border: 2px dashed #889f77;
     border-radius: 12px;
     padding: 25px;
     margin-bottom: 30px;
@@ -73,7 +73,7 @@ body {
 }
 
 .tips-hero h2 {
-    color: #385e42;
+    color: #3d5240;
     font-size: 26px;
     margin-bottom: 8px;
 }
@@ -87,7 +87,7 @@ body {
 
 .tip-card {
     background-color: #fff0f3;
-    border: 2px dashed #7a9a60;
+    border: 2px dashed #889f77;
     border-radius: 12px;
     padding: 20px;
     height: 100%;
@@ -96,11 +96,11 @@ body {
 
 .tip-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(56, 94, 66, 0.12);
+    box-shadow: 0 6px 12px rgba(61, 82, 64, 0.12);
 }
 
 .tip-card h4 {
-    color: #385e42;
+    color: #3d5240;
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -120,12 +120,12 @@ body {
 }
 
 .custom-table thead {
-    background-color: #eaf2eb;
-    color: #385e42;
+    background-color: #eef3ec;
+    color: #3d5240;
 }
 
 .custom-table th {
-    border-bottom: 2px solid #385e42;
+    border-bottom: 2px solid #3d5240;
     padding: 12px;
 }
 
